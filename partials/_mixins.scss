@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    .first {
+        display: flex;
+      }
+    
+  }
+}
+@mixin desktop {
+    @media screen and (max-width: $desktop-breakpoint) {
+      .first {
+          display: block;
+        }
+      
+    }
+  }
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        .card2 {
+            background-color:transparent;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+          }
+
+        .row.primary {
+            grid-template-columns: 1fr;
+        }
+    }
+  }
+
+@mixin mobile {
+    @media screen and (mix-width: $mobile-breakpoint) {
+        .container {
+            display: block;
+          }
+        
+          .card {
+            margin: 0 auto 20px;
+            width: 320px;
+            height: 450px;
+            border-radius: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          }
+        
+          .sec {
+            transform: translateX(0%);
+          }
+
+          .hero-text {
+            font-size: 30px;
+          }
+    }
+  }
