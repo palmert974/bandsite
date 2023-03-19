@@ -1,5 +1,7 @@
+@use '../partials/globals' as *;
+@use '../partials/mixins' as *;
 
-.body {
+body {
 	font-size: 18px;
 	padding-bottom: 26px;
 	line-height: 32px;
@@ -7,7 +9,32 @@
 	font-family: AvenirBold;
 	font-weight: 600;
 }
-.footerheader {
+
+.bio-hero {
+	background-image: url("/assets/Images/hero-bio.jpg");
+
+	&__overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	&__header {
+		color: white;
+	}
+}
+
+.bio-about {
+
+	&__title {
+		color: red;
+	}
+
+	img {
+		width: 90%;
+	}
+}
+/*
+
+.footer-header {
 	padding-bottom: 13px;
 	font-size: 34px;
 	line-height: 32px;
@@ -268,9 +295,7 @@ div.social {
 	font-weight: 700;
 	line-height: 60px;
 }
-.nav {
-	position: relative;
-}
+
 @media screen and (max-width: 850px) {
 	.row.primary {
 		grid-template-columns: 1fr;
@@ -320,3 +345,4 @@ div.social {
 		margin-top: 20px;
 	}
 }
+*/

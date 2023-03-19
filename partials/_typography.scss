@@ -1,7 +1,7 @@
-@use 'variables' as *;
+
 
 @font-face {
-    font-family: AvenirBold;
+    font-family: 'AvenirBold';
     src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format("opentype") ;
   }
   @font-face {
@@ -13,3 +13,4 @@
     src: url('../assets/fonts/Alternative-files/AvenirNextLTPro.ttf')format("truetype");
   }
 
+  
