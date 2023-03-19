@@ -3,49 +3,97 @@
 @use 'variables' as *;
 
 body {
-	overflow-x: hidden;
-	width: 100vw;
-	height: 100vh;
 	background-color: #fff;
 	background-color: #fff;
 	margin: 0rem;
+}
+
+.site-sides {
+	padding-left: $site-padding-side;
+	padding-right: $site-padding-side;
 }
 
 img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	width: 90%;
 }
 
-.navbar {
+footer {
+	background-color: $site-primary-color1;
+	color: #fff;
+	padding-top: $site-padding-small;
 	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+
+	@include tablet {
+		flex-direction: row;
+	}
+}
+
+.navbar {
 	margin: 0rem;
-    padding: 1.3em;
     height: 41px;
-    width: 100%;
+    max-width: 100%;
     background-color: #323232;
     position: relative;
+	min-height: 4.6875rem;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding-top: $site-padding-small;
+
+	@include tablet {
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+	}
 
 	&__logo{
 		max-width: 7.5rem;
 		max-height: 1.25rem;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		padding-bottom: $site-padding-small;
 	}
 
 	&__link {
 		left: 10%;
-		padding-right: 20px;
 		font-size: 14px;
-		color: rgb(255, 255, 255);
-		font-family: AvenirR;
-		font-weight: 400;
-		line-height: 7px;
-        margin-left: 1rem;
+		height: 100%;
     }
 
     &__links {
-        display: flex;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
         width: 100%;
         justify-content: space-around;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		padding-bottom: $site-padding-small;
 
+		@include tablet {
+			justify-content: flex-start;
+		}
     }
+
+	&__current {
+		border-bottom-style: solid;
+		border-bottom-width: .3125rem;
+		border-bottom-color: #fff;
+	}
 
 }
 
@@ -64,15 +112,103 @@ img {
 }
 
 .subheader {
+	font-family: 'AvenirDemi', sans-serif;
 	font-size: .875rem;
 	line-height: 1.375rem;
 	font-weight: 600;
 }
 
 .body-copy {
+	font-family: 'AvenirRegular', sans-serif;
 	font-size: .8125rem;
 	line-height: 1.125rem;
 	font-weight: 400;
+}
+
+.footer-copy {
+	font-family: 'AvenirRegular', sans-serif;
+	font-size: .8125rem;
+	line-height: 1.125rem;
+	font-weight: 400;
+}
+
+.footer {
+
+
+	&__header {
+
+		@include tablet {
+			order: 1;
+		}
+	}
+
+	&__icons {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		a {
+			max-width: 1.5rem;
+			max-height: 1.5rem;
+			padding-right: $site-padding-small;
+		}
+
+		@include tablet {
+			width: 60%;
+			justify-content: flex-start;
+			order: 2;
+		}
+	}
+
+	&__personal-info {
+
+		@include tablet {
+			order: 4;
+		}
+	}
+
+	&__logo-container {
+		max-width: 7.5rem;
+		padding-top: $site-padding-xlarge;
+		padding-left: 0;
+		
+		@include tablet {
+			order: 3;
+		}
+	}
+
+	&__logo {
+		max-width: 7.5rem;
+
+		@include tablet {
+			order: 3;
+		}
+	}
+
+	&__copyright {
+
+		@include tablet {
+			order: 5;
+		}
+	}
+}
+
+.icon {
+	max-width: 1.5rem;
+	max-height: 1.5rem;
+	padding-right: $site-padding-xlarge;
+}
+
+.no-top-margin {
+	margin-top: 0;
+}
+
+.no-bottom-margin {
+	margin-bottom: 0;
 }
 /*
 .body-img {

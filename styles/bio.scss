@@ -1,5 +1,8 @@
 @use '../partials/globals' as *;
 @use '../partials/mixins' as *;
+@use '../partials/typography' as *;
+@use '../partials/variables' as *;
+
 
 body {
 	font-size: 18px;
@@ -10,11 +13,15 @@ body {
 	font-weight: 600;
 }
 
+
 .bio-hero {
 	background-image: url("/assets/Images/hero-bio.jpg");
+	background-size: cover;
 
 	&__overlay {
 		background-color: rgba(0, 0, 0, 0.5);
+		padding-top: $site-padding-gigantic;
+		padding-bottom: $site-padding-gigantic;
 	}
 
 	&__header {
@@ -30,6 +37,32 @@ body {
 
 	img {
 		width: 90%;
+	}
+
+	&__paragraphs {
+		
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+}
+
+.bio-gallery__container {
+	display: flex;
+	flex-direction: column;
+
+	@include tablet {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	img {
+		margin-bottom: $site-padding-xsmall;
+
+		@include tablet {
+			max-width: 30%;
+		}
 	}
 }
 /*
@@ -127,12 +160,7 @@ body {
 	background-color: #706c6c;
 	background-size: cover;
 }
-.line {
-	width: 100%;
-	height: 10%;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
+
 .a {
 	width: 420px;
 	height: auto;

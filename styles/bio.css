@@ -3,53 +3,103 @@
   src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
 }
 @font-face {
-  font-family: AvenirR;
+  font-family: "AvenirRegular";
   src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 @font-face {
-  font-family: AvenirPro;
+  font-family: "AvenirDemi";
   src: url("../assets/fonts/Alternative-files/AvenirNextLTPro.ttf") format("truetype");
 }
 body {
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
   background-color: #fff;
   background-color: #fff;
   margin: 0rem;
+}
+
+.site-sides {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 90%;
 }
 
-.navbar {
+footer {
+  background-color: #323232;
+  color: #fff;
+  padding-top: 1.5rem;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    flex-direction: row;
+  }
+}
+
+.navbar {
   margin: 0rem;
-  padding: 1.3em;
   height: 41px;
-  width: 100%;
+  max-width: 100%;
   background-color: #323232;
   position: relative;
+  min-height: 4.6875rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.navbar a {
+  display: flex;
+  align-items: center;
 }
 .navbar__logo {
   max-width: 7.5rem;
   max-height: 1.25rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  padding-bottom: 1.5rem;
 }
 .navbar__link {
   left: 10%;
-  padding-right: 20px;
   font-size: 14px;
-  color: rgb(255, 255, 255);
-  font-family: AvenirR;
-  font-weight: 400;
-  line-height: 7px;
-  margin-left: 1rem;
+  height: 100%;
 }
 .navbar__links {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
   justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  padding-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .navbar__links {
+    justify-content: flex-start;
+  }
+}
+.navbar__current {
+  border-bottom-style: solid;
+  border-bottom-width: 0.3125rem;
+  border-bottom-color: #fff;
 }
 
 .page-header {
@@ -67,15 +117,93 @@ img {
 }
 
 .subheader {
+  font-family: "AvenirDemi", sans-serif;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
 }
 
 .body-copy {
+  font-family: "AvenirRegular", sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
+}
+
+.footer-copy {
+  font-family: "AvenirRegular", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__header {
+    order: 1;
+  }
+}
+.footer__icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer__icons a {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__icons {
+    width: 60%;
+    justify-content: flex-start;
+    order: 2;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__personal-info {
+    order: 4;
+  }
+}
+.footer__logo-container {
+  max-width: 7.5rem;
+  padding-top: 4rem;
+  padding-left: 0;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo-container {
+    order: 3;
+  }
+}
+.footer__logo {
+  max-width: 7.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    order: 3;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    order: 5;
+  }
+}
+
+.icon {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  padding-right: 4rem;
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0;
 }
 
 /*
@@ -416,9 +544,12 @@ body {
 
 .bio-hero {
   background-image: url("/assets/Images/hero-bio.jpg");
+  background-size: cover;
 }
 .bio-hero__overlay {
   background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .bio-hero__header {
   color: white;
@@ -429,6 +560,31 @@ body {
 }
 .bio-about img {
   width: 90%;
+}
+@media screen and (min-width: 768px) {
+  .bio-about__paragraphs {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.bio-gallery__container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .bio-gallery__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.bio-gallery__container img {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .bio-gallery__container img {
+    max-width: 30%;
+  }
 }
 
 /*
@@ -526,12 +682,7 @@ body {
 	background-color: #706c6c;
 	background-size: cover;
 }
-.line {
-	width: 100%;
-	height: 10%;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
+
 .a {
 	width: 420px;
 	height: auto;

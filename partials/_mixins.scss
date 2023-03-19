@@ -18,18 +18,9 @@
     }
   }
 
-@mixin tablet {
+  @mixin tablet {
     @media screen and (min-width: $tablet-breakpoint) {
-        .card2 {
-            background-color:transparent;
-            display: block;
-            margin: 0 auto;
-            margin-top: 20px;
-          }
-
-        .row.primary {
-            grid-template-columns: 1fr;
-        }
+      @content;
     }
   }
 
