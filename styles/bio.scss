@@ -6,7 +6,6 @@
 
 body {
 	font-size: 18px;
-	padding-bottom: 26px;
 	line-height: 32px;
 	color: rgb(0, 0, 0);
 	font-family: AvenirBold;
@@ -39,11 +38,31 @@ body {
 		width: 90%;
 	}
 
+	&__quote {
+
+		@include tablet {
+			margin-bottom: 0;
+		}
+	}
+
+	&__quotee {
+		
+		@include tablet {
+			font-size: 1rem;
+			font-weight: 600;
+			margin-top: 0;
+		}
+	}
+
 	&__paragraphs {
 		
 		@include tablet {
 			display: flex;
 			flex-direction: row;
+			
+			p {
+				padding-right: $site-padding-small;
+			}
 		}
 	}
 }

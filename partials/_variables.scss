@@ -21,13 +21,15 @@ $desktop-padding-betweeen-components: 16px;
 
 $stroke-width: 60px;
 
-$desktop-breakpoint: 1024px;
+$desktop-breakpoint: 1280px;
 $tablet-breakpoint: 768px;
 $mobile-breakpoint: 600px;
 
 $site-primary-color1: #323232;
 
-$site-padding-side: 1rem;
+$site-padding-side-desktop: 4rem;
+$site-padding-side-tablet: 2rem;
+$site-padding-side-mobile: 1rem;
 
 $site-padding-gigantic: 5rem;
 $site-padding-xlarge: 4rem;

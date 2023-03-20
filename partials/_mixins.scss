@@ -3,20 +3,10 @@
 
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
-    .first {
-        display: flex;
-      }
+    @content;
     
   }
 }
-@mixin desktop {
-    @media screen and (max-width: $desktop-breakpoint) {
-      .first {
-          display: block;
-        }
-      
-    }
-  }
 
   @mixin tablet {
     @media screen and (min-width: $tablet-breakpoint) {
