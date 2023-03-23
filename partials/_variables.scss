@@ -1,32 +1,35 @@
+$desktop-page-header: 3.75rem;
+$desktop-section-header: 2.25rem;
+$desktop-subheader: 1.5rem;
+$desktop-bodycopy: .875rem;
+$desktop-footercopy: .875rem;
 
-$desktop-page-header: 60px;
-$desktop-section-header: 36px;
-$desktop-subheader: 24px;
-$desktop-bodycopy: 14px;
-$desktop-footercopy: 14px;
+$mobile-page-header: 1.5rem;
+$mobile-section-header: 1.5rem;
+$mobile-subheader: .875rem;
+$mobile-bodycopy: .8125rem;
+$mobile-footercopy: .8125rem;
 
-$mobile-page-header: 24px;
-$mobile-section-header: 24px;
-$mobile-subheader: 14px;
-$mobile-bodycopy: 13px;
-$mobile-footercopy: 13px;
+$desktop-padding-before-headline: 3rem;
+$desktop-padding-after-headline: 2.25rem;
+$desktop-padding-betweeen-components: 2.25rem;
 
-$desktop-padding-before-headline: 48px;
-$desktop-padding-after-headline: 36px;
-$desktop-padding-betweeen-components: 36px;
+$desktop-padding-before-headline: 1.5rem;
+$desktop-padding-after-headline: 1rem;
+$desktop-padding-betweeen-components: 1rem;
 
-$desktop-padding-before-headline: 24px;
-$desktop-padding-after-headline: 16px;
-$desktop-padding-betweeen-components: 16px;
-
-$stroke-width: 60px;
+$stroke-width: 3.75rem;
 
 $desktop-breakpoint: 1280px;
 $tablet-breakpoint: 768px;
 $mobile-breakpoint: 600px;
 
-$site-primary-color1: #323232;
-$site-bg-color2: #FAFAFA;
+$site-primary-white: #FFF;
+$site-primary-silver: #AFAFAF;
+$site-primary-black: #323232;
+$site-secondary-alabaster: #FAFAFA;
+$site-secondary-black: #000;
+$site-secondary-mercury: #E1E1E1;
 
 $site-padding-side-desktop: 8rem;
 $site-padding-side-tablet: 4rem;
@@ -37,4 +40,3 @@ $site-padding-xlarge: 4rem;
 $site-padding-medium: 2rem;
 $site-padding-small: 1.5rem;
 $site-padding-xsmall: 1rem;
-

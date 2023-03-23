@@ -3,10 +3,10 @@
 @use 'variables' as *;
 
 body {
-	background-color: #fff;
-	background-color: #fff;
-	margin: 0rem;
-	padding: 0rem;
+	background-color: $site-primary-white;
+	background-color: $site-primary-white;
+	margin: 0;
+	padding: 0;
 }
 
 .site-sides {
@@ -32,8 +32,8 @@ img {
 }
 
 footer {
-	background-color: $site-primary-color1;
-	color: #fff;
+	background-color: $site-primary-black;
+	color: $site-primary-white;
 	padding-top: $site-padding-small;
 	display: flex;
 	flex-direction: column;
@@ -45,12 +45,12 @@ footer {
 }
 
 .navbar {
-	margin: 0rem;
-    max-width: 100%;
-    background-color: #323232;
-    position: relative;
+	margin: 0;
+	max-width: 100%;
+	background-color: $site-primary-black;
+	position: relative;
 	min-height: 4.6875rem;
-	color: #fff;
+	color: $site-primary-white;
 	display: flex;
 	flex-direction: column;
 	padding-top: $site-padding-small;
@@ -67,7 +67,7 @@ footer {
 		align-items: center;
 		justify-content: center;
 		margin-bottom: .5rem;
-		
+
 		@include tablet {
 			min-width: 1rem;
 			padding: $site-padding-small;
@@ -85,7 +85,7 @@ footer {
 		}
 	}
 
-	&__logo{
+	&__logo {
 		max-width: 7.5rem;
 		max-height: 1.25rem;
 		display: block;
@@ -107,23 +107,23 @@ footer {
 
 	&__link {
 		left: 10%;
-		font-size: 14px;
+		font-size: .875rem;
 		height: 100%;
 		width: 49%;
 		text-align: center;
-		color: #afafaf;
+		color: $site-primary-silver;
 
 		@include tablet {
 			width: auto;
 		}
-    }
+	}
 
-    &__links {
+	&__links {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-        width: 100%;
-        justify-content: flex-start;
+		width: 100%;
+		justify-content: flex-start;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
@@ -132,24 +132,24 @@ footer {
 		@include tablet {
 			justify-content: flex-start;
 		}
-    }
+	}
 
 	&__current {
 		border-bottom-style: solid;
 		border-bottom-width: .25rem;
-		border-bottom-color: #fff;
-		color: #fff;
+		border-bottom-color: $site-primary-white;
+		color: $site-primary-white;
 
 		a {
 			font-weight: 400;
 		}
-		
+
 	}
 
 }
 
 .page-header {
-	font-family: 'AvenirBold', sans-serif;
+	font-family: 'Avenir', sans-serif;
 	font-size: 1.25rem;
 	line-height: 2rem;
 	font-weight: 700;
@@ -161,7 +161,7 @@ footer {
 }
 
 .section-header {
-	font-family: 'AvenirBold', sans-serif;
+	font-family: 'Avenir', sans-serif;
 	font-size: 1.25rem;
 	line-height: 2rem;
 	font-weight: 700;
@@ -173,7 +173,7 @@ footer {
 }
 
 .subheader {
-	font-family: 'AvenirDemi', sans-serif;
+	font-family: 'Avenir', sans-serif;
 	font-size: .875rem;
 	line-height: 1.375rem;
 	font-weight: 600;
@@ -185,7 +185,7 @@ footer {
 }
 
 .body-copy {
-	font-family: 'AvenirRegular', sans-serif;
+	font-family: 'Avenir', sans-serif;
 	font-size: .8125rem;
 	line-height: 1.125rem;
 	font-weight: 400;
@@ -195,14 +195,14 @@ footer {
 		line-height: 1.375rem;
 	}
 
-	@include desktop{
+	@include desktop {
 		font-size: 1rem;
 		line-height: 1.5rem;
 	}
 }
 
 .footer-copy {
-	font-family: 'AvenirRegular', sans-serif;
+	font-family: 'Avenir', sans-serif;
 	font-size: .8125rem;
 	line-height: 1.125rem;
 	font-weight: 400;
@@ -255,14 +255,14 @@ footer {
 
 		@include desktop {
 			width: 20%;
-		}	
+		}
 	}
 
 	&__logo-container {
 		max-width: 7.5rem;
 		padding-top: $site-padding-xlarge;
 		padding-left: 0;
-		
+
 		@include tablet {
 			order: 3;
 			max-width: 33%;
@@ -304,4 +304,198 @@ footer {
 
 .no-bottom-margin {
 	margin-bottom: 0;
+}
+
+.conversation {
+	margin-left: 1rem;
+	margin-bottom: 2.5rem;
+	display: flex;
+	flex-direction: column;
+
+	@include tablet {
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+	}
+
+	@include desktop {
+		margin-left: 11.25rem;
+		width: 70%;
+	}
+
+	&__form {
+		width: 94%;
+
+		@include tablet {
+			width: auto;
+			margin-left: 5rem;
+			margin-right: 5rem;
+		}
+
+		@include desktop {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&__heading {
+		display: block;
+		color: $site-primary-silver #AFAFAF;
+		font-family: "Avenir", sans-serif;
+		margin-bottom: .3125rem;
+	}
+
+	&__comments {
+		margin-top: .125rem;
+
+		img {
+			@include tablet {
+				width: 1.875rem;
+				height: 1.875rem;
+			}
+		}
+
+		@include tablet {
+			margin-left: 5rem;
+			margin-right: 5rem;
+		}
+
+		@include desktop {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	input {
+		border: .125rem solid $black;
+		border-radius: .1875rem;
+		width: 100%;
+		height: 2.5rem;
+		line-height: 2em;
+		padding-left: .625rem;
+		margin-bottom: .625rem;
+		box-sizing: border-box;
+
+		@include desktop {
+			height: 3rem;
+			font-size: 1rem;
+		}
+	}
+
+	textarea {
+		background-color: $site-secondary-alabaster;
+		border: .0625rem solid $site-secondary-mercury;
+		border-radius: .1875rem;
+		width: 100%;
+		line-height: 2em;
+		padding-left: .625rem;
+		margin-bottom: .625rem;
+		box-sizing: border-box;
+
+		@include desktop {
+			height: 6rem;
+			font-size: 1rem;
+		}
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__picture {
+		margin-top: .75rem;
+		margin-right: 1.25rem;
+	}
+
+	&__details {
+		width: 90%;
+
+		p {
+			display: inline-block;
+		}
+
+		&>p {
+			margin-top: 0;
+		}
+
+		@include desktop {
+			width: 28.75rem;
+		}
+	}
+
+	&__nameAndDate {
+		display: flex;
+		justify-content: space-between;
+
+		@include tablet {
+			justify-content: flex-start;
+		}
+
+		&-name {
+			font-family: "Avenir", sans-serif;
+
+			@include tablet {
+				margin-right: .625rem;
+			}
+		}
+
+		&-date {
+			color: $silver;
+		}
+	}
+
+	&__card {
+		width: 94%;
+		border-bottom: .0625rem solid $site-secondary-mercury;
+
+		&:first-of-type {
+			border-top: .0625rem solid $site-secondary-mercury;
+		}
+
+		@include tablet {
+			width: 100%;
+		}
+
+		@include desktop {
+			width: 33.125rem;
+		}
+	}
+
+	&__profile-picture {
+		width: 3.125rem;
+		height: 3.125rem;
+		border-radius: 100%;
+	}
+
+	&__submit-button {
+		width: 100%;
+
+		@include tablet {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	&__submit {
+		display: block;
+		height: 2.5rem;
+		width: 100%;
+		background-color: $site-primary-black;
+		color: $site-primary-white;
+		border-radius: .3125rem;
+		border: none;
+
+		@include tablet {
+			width: 25%;
+		}
+
+		@include desktop {
+			height: 3rem;
+			width: 10rem;
+			font-size: 1rem;
+		}
+
+		&:hover {
+			@include buttons;
+		}
+	}
 }

@@ -1,0 +1,128 @@
+@use 'mixins' as *;
+@use 'typography' as *;
+@use 'variables' as *;
+
+
+
+.shows {
+    box-sizing: border-box;
+    padding-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+
+    @include tablet {
+        width: 100%;
+        padding-left: 1.5rem;
+    }
+
+    @include desktop {
+        padding-left: 11.25rem;
+        display: flex;
+        width: auto;
+    }
+
+    &__table {
+        margin-top: 1.875rem;
+
+        @include mobile-medium {
+            text-align: center;
+        }
+
+        @include tablet {
+            text-align: start;
+            margin-right: 1.5rem;
+        }
+
+        @include desktop {
+            margin-left: 7.5rem;
+            width: 65%;
+        }
+    }
+
+    &__card {
+        border-bottom: 1px solid $site-secondary-mercury;
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            margin-bottom: .625rem;
+        }
+
+        h3 {
+            @include tablet {
+                width: 25%;
+            }
+        }
+
+        p {
+            @include tablet {
+                width: 25%;
+            }
+        }
+    }
+
+    &__heading {
+        color: $site-primary-silver;
+        font-family: "Avenir", sans-serif;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin: 0;
+
+        @include desktop {
+            margin-top: 1.5625rem;
+        }
+    }
+
+    &__button {
+        height: 3.125rem;
+        width: 95%;
+        background-color: $site-secondary-black;
+        color: $site-primary-white;
+        font-family: "Avenir", sans-serif;
+        font-size: 0.9rem;
+        margin-bottom: .625rem;
+        border-radius: .3125rem;
+        width: 100%;
+        border: none;
+
+        @include mobile-medium {
+            width: 50%;
+        }
+
+        @include tablet {
+            width: 25%;
+        }
+
+        &:hover {
+            @include buttons
+        }
+    }
+}
+
+.tablet__header {
+
+    @include mobile {
+        display: none;
+    }
+
+    @include tablet {
+        display: flex;
+    }
+
+    p {
+        @include tablet {
+            width: 25%;
+        }
+    }
+}
+
+.tablet__head {
+    color: $site-primary-silver;
+    font-family: "Avenir Demi", sans-serif;
+}
