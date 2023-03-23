@@ -5,11 +5,7 @@
 
 
 body {
-	font-size: 1.125rem;
-	line-height: 2rem;
 	color: rgb(0, 0, 0);
-	font-family: "Avenir", sans-serif;
-	font-weight: 600;
 }
 
 
@@ -17,10 +13,12 @@ body {
 	background-image: url("/assets/Images/hero-bio.jpg");
 	background-size: cover;
 
+
 	&__overlay {
 		background-color: rgba(0, 0, 0, 0.5);
 		padding-top: $site-padding-gigantic;
 		padding-bottom: $site-padding-gigantic;
+		@include site-sides;
 
 		@include desktop {
 			padding-top: 16rem;
@@ -30,6 +28,7 @@ body {
 
 	&__header {
 		color: $site-primary-white;
+		@include page-header;
 	}
 
 	&__text {
@@ -39,6 +38,11 @@ body {
 }
 
 .bio-about {
+	@include site-sides;
+
+	&__header {
+		@include section-header;
+	}
 
 	&__title {
 		color: red;
@@ -49,6 +53,7 @@ body {
 	}
 
 	&__quote {
+		@include subheader;
 
 		@include tablet {
 			margin-bottom: 0;
@@ -56,12 +61,15 @@ body {
 	}
 
 	&__quotee {
+		@include subheader;
 
 		@include tablet {
-			font-size: 1rem;
-			font-weight: 600;
 			margin-top: 0;
 		}
+	}
+
+	&__subheader {
+		@include subheader;
 	}
 
 	&__paragraphs {
@@ -75,28 +83,37 @@ body {
 			}
 		}
 	}
+
+	&__paragraph {
+		@include body-copy;
+	}
 }
 
 .bio-gallery {
-	background-color: $site-primary-black;
+	background-color: $site-primary-white;
 	padding-top: $site-padding-medium;
 	padding-bottom: $site-padding-medium;
-}
+	@include site-sides;
 
-.bio-gallery__container {
-	display: flex;
-	flex-direction: column;
-
-	@include tablet {
-		flex-direction: row;
-		flex-wrap: wrap;
+	&__header {
+		@include section-header;
 	}
 
-	img {
-		margin-bottom: $site-padding-xsmall;
+	&__container {
+		display: flex;
+		flex-direction: column;
 
 		@include tablet {
-			max-width: 30%;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		img {
+			margin-bottom: $site-padding-xsmall;
+
+			@include tablet {
+				max-width: 30%;
+			}
 		}
 	}
 }

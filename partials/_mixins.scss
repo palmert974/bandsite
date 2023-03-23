@@ -4,13 +4,92 @@
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
-    
+
   }
 }
 
-  @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-      @content;
-    }
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin page-header {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+
+  @include tablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+@mixin section-header {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+@mixin subheader {
+  font-family: 'Avenir', sans-serif;
+  font-size: .875rem;
+  line-height: 1.375rem;
+
+
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@mixin body-copy {
+  font-family: 'Avenir', sans-serif;
+  font-size: .8125rem;
+  line-height: 1.125rem;
+
+
+  @include tablet {
+    font-size: .875rem;
+    line-height: 1.375rem;
   }
 
+  @include desktop {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@mixin footer-copy {
+  font-family: 'Avenir', sans-serif;
+  font-size: .8125rem;
+  line-height: 1.125rem;
+
+
+  @include tablet {
+    font-size: .875rem;
+    line-height: 1.375rem;
+  }
+}
+
+@mixin site-sides {
+  padding-left: $site-padding-side-mobile;
+  padding-right: $site-padding-side-mobile;
+
+  @include tablet {
+    padding-left: $site-padding-side-tablet;
+    padding-right: $site-padding-side-tablet;
+  }
+
+  @include desktop {
+    padding-left: $site-padding-side-desktop;
+    padding-right: $site-padding-side-desktop;
+  }
+}

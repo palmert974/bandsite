@@ -64,7 +64,7 @@ let shows__array = [
 
 	let shows__dateText = document.createElement("p");
 	shows__dateText.innerText = "DATE";
-	shows__dateText.className = "shows__heading";
+	shows__dateText.className = "shows__header";
 	shows__card.appendChild(shows__dateText);
 
 	let shows__date = document.createElement("h3");
@@ -73,7 +73,7 @@ let shows__array = [
 
 	let shows__venueText = document.createElement("p");
 	shows__venueText.innerText = "VENUE";
-	shows__venueText.className = "shows__heading";
+	shows__venueText.className = "shows__header";
 	shows__card.appendChild(shows__venueText);
 
 	let shows__venue = document.createElement("p");

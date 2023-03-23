@@ -11,14 +11,14 @@
 
     <body>
         <header class="header">
-            <nav class="navbar">
-                <a href="index.html" class="navbar__logo-container"> <img class="navbar__logo"
-                        src="/assets/Logo/Logo-bandsite.svg" alt=""> </a>
-                <ul class="navbar__links">
-                    <li class="body-copy navbar__link navbar__current">
+            <nav class="nav-bar">
+                <a href="index.html" class="nav-bar__logo-container"> <img class="nav-bar__logo"
+                        src="/assets/Logo/Logo-bandsite.svg" alt="Bandsite Logo"> </a>
+                <ul class="nav-bar__links">
+                    <li class="nav-bar__link nav-bar__current">
                         <a>Biography</a>
                     </li>
-                    <li class="body-copy navbar__link">
+                    <li class="nav-bar__link">
                         <a>Shows</a>
                     </li>
                 </ul>
@@ -26,22 +26,23 @@
         </header>
 
         <section class="bio-hero">
-            <div class="bio-hero__overlay site-sides">
-                <h1 class="bio-hero__header page-header"> The Bees Knees </h1>
+            <div class="bio-hero__overlay">
+                <h1 class="bio-hero__header"> The Bees Knees </h1>
             </div>
         </section>
 
-        <section class="bio-about site-sides">
-            <h2 class="section-header"> About the Musicians</h2>
+        <section class="bio-about">
+            <h2 class="bio-about__header"> About the Musicians</h2>
             <img src='../assets/images/band.jpg' alt="couple on a bench">
-            <p class="subheader bio-about__quote">"We push each other to be the best. It’s not uncommon for one of us to
+            <p class="bio-about__quote">"We push each other to be the best. It’s not uncommon for one of us to
                 say ‘this
                 needs to
                 be better, back to the drawing board’ "</p>
-            <p class="subheader bio-about__quotee">- Bryan Teddy, lead vocalist of The Bees Knees</p>
-            <h3 class="subheader">The Bees Knees</h3>
+            <p class="bio-about__quotee">- Bryan Teddy, lead vocalist of The Bees Knees</p>
+            <h3 class="bio-about__subheader">The Bees Knees</h3>
             <div class="bio-about__paragraphs">
-                <p class="body-copy">The Bees Knees is a pop rock band originating from San Francisco, California.
+                <p class="bio-about__paragraph">The Bees Knees is a pop rock band originating from San Francisco,
+                    California.
                     The band
                     consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist
                     Kent Zulkee
@@ -52,7 +53,8 @@
                     Pony, The Cat’s Meow), Adams was confident the band could succeed even further, pushing them to
                     sign with
                     Magenta Records. </p>
-                <p class="body-copy">From there, the band has soared, gaining international recognition and ranking
+                <p class="bio-about__paragraph">From there, the band has soared, gaining international recognition and
+                    ranking
                     in the top
                     10 on the Poster Charts. New fans immediately fell in love with the band’s original and organic
                     attitude,
@@ -66,32 +68,31 @@
             </div>
         </section>
 
-        <section class="bio-gallery site-sides">
-            <h2 class="section-header">Photo Gallery</h2>
+        <section class="bio-gallery">
+            <h2 class="bio-gallery__header">Photo Gallery</h2>
             <div class="bio-gallery__container">
-                <img class="img-bg" src='../assets/images/Photo-gallery-1.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-2.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-3.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-4.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-5.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-6.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-7.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-8.jpg' alt="">
-                <img class="img-bg" src='../assets/images/Photo-gallery-9.jpg' alt="">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-1.jpg' alt="pink fog">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-2.jpg' alt="women solo">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-3.jpg' alt="hands up">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-4.jpg' alt="women raise hands ">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-5.jpg' alt="confetti hands ">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-6.jpg' alt="guy on mic ">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-7.jpg' alt=" stage confetti">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-8.jpg' alt="Dj booth ">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-9.jpg' alt="confetti in crowd">
             </div>
         </section>
 
-        <section class="conversation">
-            <h1 class="conversation__title">Join the Conversation</h1>
+        <section class="bio-conversation__header">
+            <h1 class="conversation__header">Join the Conversation</h1>
             <form action="" method="post" class="conversation__form">
                 <div class="conversation__row">
                     <div class="conversation__picture">
-                        <img class="conversation__profile-picture" src="/assets/Images/Mohan-muruge.jpg" alt="profile">
                     </div>
                     <div class="conversation__details">
-                        <label for="name" class="conversation__heading">NAME</label>
+                        <label for="name" class="conversation__header">NAME</label>
                         <input type="text" name="name" id="" placeholder="Your Name">
-                        <label for="comment" class="conversation__heading">COMMENT</label>
+                        <label for="comment" class="conversation__header">COMMENT</label>
                         <textarea name="comment" id="" cols="30" rows="5" placeholder="Add a new comment"></textarea>
                         <div class="conversation__submit-button">
                             <button type="submit" class="conversation__submit">COMMENT</button>
@@ -107,7 +108,7 @@
         <div class="conversation__comments"></div>
         </section>
 
-        <footer class="footer site-sides">
+        <footer class="footer">
             <h2 class="section-header footer__header">Get in Touch</h2>
             <div class="footer__icons">
                 <a> <img src="/assets/Icons/SVG/Icon-instagram.svg" class="fa fa-instagram icon"></a>

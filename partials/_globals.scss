@@ -9,21 +9,6 @@ body {
 	padding: 0;
 }
 
-.site-sides {
-	padding-left: $site-padding-side-mobile;
-	padding-right: $site-padding-side-mobile;
-
-	@include tablet {
-		padding-left: $site-padding-side-tablet;
-		padding-right: $site-padding-side-tablet;
-	}
-
-	@include desktop {
-		padding-left: $site-padding-side-desktop;
-		padding-right: $site-padding-side-desktop;
-	}
-}
-
 img {
 	display: block;
 	margin-left: auto;
@@ -38,13 +23,14 @@ footer {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+	@include site-sides;
 
 	@include tablet {
 		flex-direction: row;
 	}
 }
 
-.navbar {
+.nav-bar {
 	margin: 0;
 	max-width: 100%;
 	background-color: $site-primary-black;
@@ -106,8 +92,8 @@ footer {
 	}
 
 	&__link {
+		@include body-copy;
 		left: 10%;
-		font-size: .875rem;
 		height: 100%;
 		width: 49%;
 		text-align: center;
@@ -140,83 +126,16 @@ footer {
 		border-bottom-color: $site-primary-white;
 		color: $site-primary-white;
 
-		a {
-			font-weight: 400;
-		}
 
 	}
 
-}
-
-.page-header {
-	font-family: 'Avenir', sans-serif;
-	font-size: 1.25rem;
-	line-height: 2rem;
-	font-weight: 700;
-
-	@include tablet {
-		font-size: 3.75rem;
-		line-height: 4.25rem;
-	}
-}
-
-.section-header {
-	font-family: 'Avenir', sans-serif;
-	font-size: 1.25rem;
-	line-height: 2rem;
-	font-weight: 700;
-
-	@include tablet {
-		font-size: 2.25rem;
-		line-height: 2.75rem;
-	}
-}
-
-.subheader {
-	font-family: 'Avenir', sans-serif;
-	font-size: .875rem;
-	line-height: 1.375rem;
-	font-weight: 600;
-
-	@include tablet {
-		font-size: 1.5rem;
-		line-height: 2rem;
-	}
-}
-
-.body-copy {
-	font-family: 'Avenir', sans-serif;
-	font-size: .8125rem;
-	line-height: 1.125rem;
-	font-weight: 400;
-
-	@include tablet {
-		font-size: .875rem;
-		line-height: 1.375rem;
-	}
-
-	@include desktop {
-		font-size: 1rem;
-		line-height: 1.5rem;
-	}
-}
-
-.footer-copy {
-	font-family: 'Avenir', sans-serif;
-	font-size: .8125rem;
-	line-height: 1.125rem;
-	font-weight: 400;
-
-	@include tablet {
-		font-size: .875rem;
-		line-height: 1.375rem;
-	}
 }
 
 .footer {
-
+	@include body-copy;
 
 	&__header {
+		@include section-header;
 
 		@include tablet {
 			order: 1;
@@ -366,7 +285,7 @@ footer {
 	}
 
 	input {
-		border: .125rem solid $black;
+		border: .125rem solid $site-secondary-black;
 		border-radius: .1875rem;
 		width: 100%;
 		height: 2.5rem;
@@ -439,7 +358,8 @@ footer {
 		}
 
 		&-date {
-			color: $silver;
+			color: $site-primary-silver;
+			;
 		}
 	}
 
@@ -494,8 +414,5 @@ footer {
 			font-size: 1rem;
 		}
 
-		&:hover {
-			@include buttons;
-		}
 	}
 }
