@@ -12,14 +12,14 @@
     <body>
         <header class="header">
             <nav class="nav-bar">
-                <a href="index.html" class="nav-bar__logo-container"> <img class="nav-bar__logo"
+                <a href="/index.html" class="nav-bar__logo-container"> <img class="nav-bar__logo"
                         src="/assets/Logo/Logo-bandsite.svg" alt="Bandsite Logo"> </a>
                 <ul class="nav-bar__links">
                     <li class="nav-bar__link nav-bar__current">
-                        <a>Biography</a>
+                        <a class="nav-bar__link-text" href="/index.html">Biography</a>
                     </li>
                     <li class="nav-bar__link">
-                        <a>Shows</a>
+                        <a href="/pages/shows.html">Shows</a>
                     </li>
                 </ul>
             </nav>
@@ -77,68 +77,67 @@
                 <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-4.jpg' alt="women raise hands ">
                 <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-5.jpg' alt="confetti hands ">
                 <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-6.jpg' alt="guy on mic ">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-7.jpg' alt=" stage confetti">
+                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-7.jpg' alt="stage confetti">
                 <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-8.jpg' alt="Dj booth ">
                 <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-9.jpg' alt="confetti in crowd">
             </div>
         </section>
-
-        <section class="bio-conversation__header">
-            <h1 class="conversation__header">Join the Conversation</h1>
-            <form action="" method="post" class="conversation__form">
-                <div class="conversation__row">
-                    <div class="conversation__picture">
+        <section class="bio-conversation">
+            <h2 class="bio-conversation__header">Join the Conversation</h2>
+            <form action="bio-method" method="post" class="bio-conversation__form">
+                <div class="bio-conversation__row">
+                    <div class="bio-conversation__picture">
+                        <img class="bio-conversation__profile-picture" src="/assets/Images/Mohan-muruge.jpg"
+                            alt="mohan murge">
                     </div>
-                    <div class="conversation__details">
-                        <label for="name" class="conversation__header">NAME</label>
-                        <input type="text" name="name" id="" placeholder="Your Name">
-                        <label for="comment" class="conversation__header">COMMENT</label>
-                        <textarea name="comment" id="" cols="30" rows="5" placeholder="Add a new comment"></textarea>
-                        <div class="conversation__submit-button">
-                            <button type="submit" class="conversation__submit">COMMENT</button>
+                    <div class="bio-conversation__details">
+                        <label for="bio-name" class="bio-conversation__label">NAME</label>
+                        <input type="text" name="name" id="bio-name" class="bio-conversation__input"
+                            placeholder="Enter your name">
+                        <label for="comment" class="bio-conversation__label">COMMENT</label>
+                        <textarea name="comment" id="comment" class="bio-conversation__text-area" cols="30" rows="5"
+                            placeholder="Add a new comment"></textarea>
+                        <div class="bio-conversation__submit">
+                            <button type="submit" class="bio-conversation__submit-button">COMMENT</button>
                         </div>
                     </div>
                 </div>
             </form>
-            <div class="conversation__comments"></div>
-        </section>
-        </div>
-        </div>
-        </form>
-        <div class="conversation__comments"></div>
+            <div class="bio-conversation__comments"></div>
         </section>
 
+
         <footer class="footer">
-            <h2 class="section-header footer__header">Get in Touch</h2>
+            <h2 class="footer__header">Get in Touch</h2>
             <div class="footer__icons">
                 <a> <img src="/assets/Icons/SVG/Icon-instagram.svg" class="fa fa-instagram icon"></a>
                 <a> <img src="/assets/Icons/SVG/Icon-facebook.svg" class="fa fa-facebook icon"></a>
                 <a> <img src="/assets/Icons/SVG/Icon-twitter.svg" class="fa fa-twitter icon"></a>
             </div>
             <div class="footer__personal-info">
-                <p class="footer-copy no-bottom-margin"><b>Cam Adams</b></p>
-                <p class="footer-copy no-top-margin"><b>Bees Knees Management</b></p>
-                <p class="footer-copy no-bottom-margin">503 Broadway Penthouse, </p>
-                <p class="footer-copy no-top-margin"> New York, NY 10012, USA</p>
-                <p class="footer-copy">info@thebeeskness.com</p>
+                <p class="footer__personal-name"><b>Cam Adams</b></p>
+                <p class="footer__personal-company"><b>Bees Knees Management</b></p>
+                <p class="footer__personal-street">503 Broadway Penthouse, </p>
+                <p class="footer__personal-city"> New York, NY 10012, USA</p>
+                <p class="footer__personal-email">info@thebeeskness.com</p>
             </div>
             <div class="footer__personal-info">
-                <p class="footer-copy no-bottom-margin"><b>Pearl Gregg</b></p>
-                <p class="footer-copy no-top-margin"><b>Limitless Artist Group</b></p>
-                <p class="footer-copy no-bottom-margin">Booking Agent for</p>
-                <p class="footer-copy no-top-margin">USA / South America / Japan</p>
-                <p class="footer-copy" href="pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</p>
+                <p class="footer__personal-name"><b>Pearl Gregg</b></p>
+                <p class="footer__personal-company"><b>Limitless Artist Group</b></p>
+                <p class="footer__personal-street">Booking Agent for</p>
+                <p class="footer__personal-city">USA / South America / Japan</p>
+                <p class="footer__personal-email" href="pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</p>
             </div>
             <div class="footer__personal-info">
-                <p class="footer-copy no-bottom-margin"><b>Carson Whyte</b></p>
-                <p class="footer-copy no-top-margin"><b>ARCH Entertainment</b></p>
-                <p class="footer-copy no-bottom-margin">Booking Agent for </p>
-                <p class="footer-copy no-top-margin">UK / EU / AU </p>
-                <p class="footer-copy">cwhyte@archentertainment.com </p>
+                <p class="footer__personal-name"><b>Carson Whyte</b></p>
+                <p class="footer__personal-company"><b>ARCH Entertainment</b></p>
+                <p class="footer__personal-street">Booking Agent for </p>
+                <p class="footer__personal-city">UK / EU / AU </p>
+                <p class="footer__personal-email">cwhyte@archentertainment.com </p>
             </div>
-            <a href="index.html" class="footer__logo-container"> <img class="footer__logo"
+            <a href=" index.html" class="footer__logo-container"> <img class="footer__logo"
                     src="/assets/Logo/Logo-bandsite.svg" alt=""> </a>
-            <p class="footer-copy footer__copyright fit1">Copyright The Bees Knees © 2021 All Rights Reserve</p>
+            <p class="footer__copyright fit1">Copyright The Bees Knees © 2021 All Rights Reserve</p>
         </footer>
         <script src="/scripts/index-page.js"></script>
     </body>

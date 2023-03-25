@@ -4,6 +4,92 @@
 @use '../partials/variables' as *;
 
 
+// .shows-hero
+//   position: relative
+
+//   &___overlayer
+//     position: absolute
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     background-color: rgba(0, 0, 0, 0.5)
+
+//   .shows__header
+//     position: relative
+//     z-index: 1
+//     padding: 4rem 0
+
+//     .shows__text
+//       font-size: 2.4rem
+//       font-weight: 700
+//       text-align: center
+
+//   .shows
+//     padding: 6rem 0
+
+//     &__title
+//       font-size: 4rem
+//       font-weight: 700
+//       text-align: center
+//       margin-bottom: 6rem
+
+//     &__table
+//       display: flex
+//       flex-direction: column
+
+//     .tablet__header
+//       display: flex
+//       justify-content: space-between
+//       margin-bottom: 2rem
+
+//       &__head
+//         font-size: 1.6rem
+//         font-weight: 700
+//         color: #8f8f8f
+//         text-transform: uppercase
+//         letter-spacing: 0.2rem
+
+//     .shows__card
+//       border-radius: 0.8rem
+//       background-color: #fff
+//       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1)
+//       padding: 4rem
+//       margin-bottom: 4rem
+
+//       &__header
+//         font-size: 1.6rem
+//         font-weight: 700
+//         color: #8f8f8f
+//         text-transform: uppercase
+//         letter-spacing: 0.2rem
+//         margin-bottom: 2rem
+
+//       h3
+//         font-size: 3.2rem
+//         font-weight: 700
+//         margin-bottom: 2rem
+
+//       p
+//         font-size: 1.6rem
+//         font-weight: 400
+//         margin-bottom: 1rem
+
+//       .shows__button
+//         font-size: 1.6rem
+//         font-weight: 700
+//         text-transform: uppercase
+//         letter-spacing: 0.2rem
+//         color: #fff
+//         background-color: #daa520
+//         border: none
+//         border-radius: 0.8rem
+//         padding: 1.6rem 2.4rem
+//         margin-top: 2rem
+//         transition: background-color 0.3s ease-in-out
+
+//         &:hover
+//           background-color: #c6951e
 
 // .shows {
 //     box-sizing: border-box;
@@ -23,63 +109,56 @@
 //         width: auto;
 //     }
 
-// //     &__table {
-// //         margin-top: 1.875rem;
+//     &__table {
+//         margin-top: 1.875rem;
 
-// //         @include mobile-medium {
-// //             text-align: center;
-// //         }
 
-// //         @include tablet {
-// //             text-align: start;
-// //             margin-right: 1.5rem;
-// //         }
 
-// //         @include desktop {
-// //             margin-left: 7.5rem;
-// //             width: 65%;
-// //         }
-// //     }
+//         @include tablet {
+//             text-align: start;
+//             margin-right: 1.5rem;
+//         }
 
-// //     &__header {
-// //         color: $site-primary-silver;
-// //         font-family: "Avenir", sans-serif;
+//         @include desktop {
+//             margin-left: 7.5rem;
+//             width: 65%;
+//         }
+//     }
 
-// //         @include tablet {
-// //             display: none;
-// //         }
-// //     }
+//     &__header {
+//         color: $site-primary-silver;
+//         font-family: "Avenir", sans-serif;
 
-// //     &__title {
-// //         margin: 0;
+//         @include tablet {
+//             display: none;
+//         }
+//     }
 
-// //         @include desktop {
-// //             margin-top: 1.5625rem;
-// //         }
-// //     }
+//     &__title {
+//         margin: 0;
 
-// //     &__button {
-// //         height: 3.125rem;
-// //         width: 95%;
-// //         background-color: $site-secondary-black;
-// //         color: $site-primary-white;
-// //         font-family: "Avenir", sans-serif;
-// //         font-size: 0.9rem;
-// //         margin-bottom: .625rem;
-// //         border-radius: .3125rem;
-// //         width: 100%;
-// //         border: none;
+//         @include desktop {
+//             margin-top: 1.5625rem;
+//         }
+//     }
 
-// //         @include mobile-medium {
-// //             width: 50%;
-// //         }
+//     &__button {
+//         height: 3.125rem;
+//         width: 95%;
+//         background-color: $site-secondary-black;
+//         color: $site-primary-white;
+//         font-family: "Avenir", sans-serif;
+//         font-size: 0.9rem;
+//         margin-bottom: .625rem;
+//         border-radius: .3125rem;
+//         width: 100%;
+//         border: none;
 
-// //         @include tablet {
-// //             width: 25%;
-// //         }
 
-// //         &:hover {
-// //             @include buttons
-// //         }
-// //     }
-// // }
+//         @include tablet {
+//             width: 25%;
+//         }
+
+
+//     }
+// }

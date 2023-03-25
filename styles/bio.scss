@@ -91,7 +91,6 @@ body {
 
 .bio-gallery {
 	background-color: $site-primary-white;
-	padding-top: $site-padding-medium;
 	padding-bottom: $site-padding-medium;
 	@include site-sides;
 
@@ -115,5 +114,203 @@ body {
 				max-width: 30%;
 			}
 		}
+	}
+}
+
+.bio-conversation {
+	display: flex;
+	flex-direction: column;
+	@include site-sides;
+
+	&__header {
+		display: block;
+		color: $site-secondary-black;
+		@include section-header;
+
+		@include tablet {
+			width: auto;
+		}
+
+		@include desktop {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
+
+	&__form {
+		width: 94%;
+		@include body-copy;
+
+		@include tablet {
+			width: auto;
+		}
+
+		@include desktop {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__picture {
+		margin-top: .75rem;
+		margin-right: 1.25rem;
+	}
+
+	&__profile-picture {
+		width: 3.125rem;
+		height: 3.125rem;
+		border-radius: 100%;
+		object-fit: cover;
+	}
+
+	&__details {
+		width: 90%;
+
+		p {
+			display: inline-block;
+		}
+
+		&>p {
+			margin-top: 0;
+		}
+
+		@include desktop {
+			width: 28.75rem;
+		}
+	}
+
+	&__input {
+		border: .125rem solid $site-secondary-mercury;
+		border-radius: .1875rem;
+		width: 100%;
+		height: 2.5rem;
+		line-height: 2em;
+		padding-left: .625rem;
+		margin-bottom: .625rem;
+		box-sizing: border-box;
+
+		@include desktop {
+			height: 3rem;
+			font-size: 1rem;
+		}
+	}
+
+	&-name {
+		@include subheader;
+
+		@include tablet {
+			margin-right: .625rem;
+		}
+	}
+
+	&__comments {
+		margin-top: .125rem;
+
+		img {
+			@include tablet {
+				width: 1.875rem;
+				height: 1.875rem;
+			}
+		}
+
+		@include tablet {
+			margin-left: 5rem;
+			margin-right: 5rem;
+		}
+
+		@include desktop {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	textarea {
+		background-color: $site-secondary-alabaster;
+		border: .0625rem solid $site-secondary-mercury;
+		border-radius: .1875rem;
+		width: 100%;
+		line-height: 2em;
+		padding-left: .625rem;
+		margin-bottom: .625rem;
+		box-sizing: border-box;
+
+		@include desktop {
+			height: 6rem;
+			font-size: 1rem;
+		}
+	}
+
+
+
+
+
+
+	&__nameAndDate {
+		display: flex;
+		justify-content: space-between;
+
+		@include tablet {
+			justify-content: flex-start;
+		}
+
+
+
+		&-date {
+			color: $site-primary-silver;
+			;
+		}
+	}
+
+	&__card {
+		width: 94%;
+		border-bottom: .0625rem solid $site-secondary-mercury;
+
+		&:first-of-type {
+			border-top: .0625rem solid $site-secondary-mercury;
+		}
+
+		@include tablet {
+			width: 100%;
+		}
+
+		@include desktop {
+			width: 33.125rem;
+		}
+	}
+
+
+	&__submit-button {
+		width: 100%;
+
+		@include tablet {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	&__submit {
+		display: block;
+		height: 2.5rem;
+		width: 100%;
+		background-color: $site-primary-black;
+		color: $site-primary-white;
+		border-radius: .3125rem;
+		border: none;
+
+		@include tablet {
+			width: 25%;
+		}
+
+		@include desktop {
+			height: 3rem;
+			width: 10rem;
+			font-size: 1rem;
+		}
+
 	}
 }

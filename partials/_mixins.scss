@@ -93,3 +93,11 @@
     padding-right: $site-padding-side-desktop;
   }
 }
+
+@mixin no-top-margin {
+  margin-top: 0;
+}
+
+@mixin no-bottom-margin {
+  margin-bottom: 0;
+}

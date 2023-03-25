@@ -1,7 +1,7 @@
 let conversationComments = [
   {
     name: "Connor Walton ",
-    date: "12/18/2018",
+    date: "02/17/2021",
     comment:
       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains. ",
   },
@@ -13,7 +13,7 @@ let conversationComments = [
   },
   {
     name: "Miles Acosta ",
-    date: "12/20/2021",
+    date: "12/20/2020",
     comment:
       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough. !",
   },
@@ -31,8 +31,7 @@ function displayComment(commentObj) {
   comment__row.appendChild(column__picture);
 
   let profile__picture = document.createElement("img");
-  profile__picture.src =
-    "/Users/tamarapalmer/Desktop/Desktop-Folder/Projects files/tamara-palmer-bandsite/assets/Images/Mohan-muruge.jpg";
+  profile__picture.src = "";
   profile__picture.className = "conversation__profile-picture";
   column__picture.appendChild(profile__picture);
 
