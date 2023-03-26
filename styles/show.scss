@@ -27,6 +27,8 @@ body {
     &__header {
         color: $site-primary-white;
         @include page-header;
+        display: flex;
+        flex-direction: column;
     }
 
     &__text {
@@ -59,12 +61,44 @@ body {
         flex-direction: column;
         border-bottom: 1px solid $site-secondary-mercury;
         @include site-sides;
+
+        &.selected {
+            background-color: $site-secondary-mercury;
+        }
+
+        &:hover {
+            background-color: $site-secondary-alabaster;
+        }
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+        }
     }
 
     &__date-header,
     &__venue-header,
     &__location-header {
         @include shows-section-header;
+    }
+
+    &__header-row {
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            @include site-sides;
+        }
+    }
+
+    &__header-button {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            @include invisible-button;
+        }
     }
 
     &__header {
@@ -81,6 +115,11 @@ body {
         padding-top: 0;
         margin-top: 0;
         margin-bottom: 0;
+
+        @include tablet {
+            align-self: center;
+            width: 7.5rem;
+        }
     }
 
     &__button {

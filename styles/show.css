@@ -340,6 +340,8 @@ body {
   font-size: 1.25rem;
   line-height: 2rem;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .shows-hero__header {
@@ -428,12 +430,70 @@ body {
     padding-right: 8rem;
   }
 }
+.shows-events__row.selected {
+  background-color: #E1E1E1;
+}
+.shows-events__row:hover {
+  background-color: #FAFAFA;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+  }
+}
 .shows-events__date-header, .shows-events__venue-header, .shows-events__location-header {
   display: none;
 }
 @media screen and (min-width: 768px) {
   .shows-events__date-header, .shows-events__venue-header, .shows-events__location-header {
     display: block;
+    width: 7.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows-events__header-row {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .shows-events__header-row {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .shows-events__header-row {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+.shows-events__header-button {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__header-button {
+    display: inline-block;
+    width: 100%;
+    color: #FFF;
+    background-color: #323232;
+    border-radius: 0.25rem;
+    height: 2.5rem;
+    border: none;
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .shows-events__header-button {
+    max-width: 12.5rem;
+    min-width: 9.375rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }
 .shows-events__header {
@@ -444,11 +504,22 @@ body {
   padding-bottom: 0;
   margin-bottom: 0;
 }
+@media screen and (min-width: 768px) {
+  .shows-events__header {
+    display: none;
+  }
+}
 .shows-events__date {
   font-weight: 600;
   padding-top: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__date {
+    align-self: center;
+    width: 7.5rem;
+  }
 }
 .shows-events__venue, .shows-events__location {
   font-family: "Avenir", sans-serif;
@@ -470,6 +541,12 @@ body {
     line-height: 1.5rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .shows-events__venue, .shows-events__location {
+    align-self: center;
+    width: 7.5rem;
+  }
+}
 .shows-events__button {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -478,4 +555,13 @@ body {
   background-color: #323232;
   border-radius: 0.25rem;
   height: 2.5rem;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__button {
+    max-width: 12.5rem;
+    min-width: 9.375rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 }/*# sourceMappingURL=show.css.map */

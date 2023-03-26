@@ -52,9 +52,14 @@ let headerLocation = document.createElement("p");
 headerLocation.innerText = "LOCATION";
 headerLocation.className = "shows-events__location-header";
 
+let shows__headerButton = document.createElement("button");
+shows__headerButton.innerText = "BUY TICKETS";
+shows__headerButton.classList.add("shows-events__header-button");
+
 divTable.appendChild(headerDates);
 divTable.appendChild(headerVenue);
 divTable.appendChild(headerLocation);
+divTable.appendChild(shows__headerButton);
 table.appendChild(divTable);
 
 function displayShow(showObj) {

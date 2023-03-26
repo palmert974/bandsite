@@ -749,6 +749,15 @@ body {
   background-color: #323232;
   border-radius: 0.25rem;
   height: 2.5rem;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  .bio-conversation__submit-button {
+    max-width: 12.5rem;
+    min-width: 9.375rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .bio-conversation__submit-button {

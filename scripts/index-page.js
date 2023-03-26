@@ -74,7 +74,7 @@ conversationComments.forEach((comment) => {
 });
 
 function displayComment(comment) {
-  const commentsSection = document.querySelector("comments");
+  const commentsSection = document.querySelector("#comments");
 
   //commentsSection.innerHTML = "";
 
@@ -86,7 +86,7 @@ function handleFormSubmit(e) {
   e.preventDefault();
 
   let day = date.toLocaleDateString();
-  let month = date.getMonth();
+  let month = date.getMonth() + 1;
   let year = date.getFullYear();
 
   let currrentDate = "${month}/${day}/${year}";
