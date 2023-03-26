@@ -128,7 +128,8 @@ body {
 		@include section-header;
 
 		@include tablet {
-			width: auto;
+			width: 100%;
+			text-align: left;
 		}
 
 		@include desktop {
@@ -215,7 +216,7 @@ body {
 
 		@include subheader;
 
-		@include desktop {
+		@include tablet {
 			height: 3rem;
 			font-size: 1rem;
 		}
@@ -262,7 +263,7 @@ body {
 
 		@include subheader;
 
-		@include desktop {
+		@include tablet {
 			height: 6rem;
 			font-size: 1rem;
 		}

@@ -23,8 +23,8 @@ body {
         flex-direction: column;
 
         @include desktop {
-            padding-top: 16rem;
-            padding-bottom: 16rem;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
         }
     }
 
@@ -75,6 +75,11 @@ body {
     @include body-copy;
     padding-bottom: $site-padding-xsmall;
 
+    @include tablet {
+        padding-top: $site-padding-medium;
+        padding-bottom: $site-padding-medium;
+    }
+
     @include desktop {
         display: flex;
     }
@@ -86,6 +91,7 @@ body {
 
     &__text {
         @include site-sides;
+        @include section-header;
     }
 
     &__row {
@@ -94,12 +100,12 @@ body {
         border-bottom: 1px solid $site-secondary-mercury;
         @include site-sides;
 
-        &.selected {
-            background-color: $site-secondary-mercury;
-        }
-
         &:hover {
             background-color: $site-secondary-alabaster;
+        }
+
+        &-selected {
+            background-color: $site-secondary-mercury;
         }
 
         @include tablet {
@@ -162,6 +168,10 @@ body {
         @include tablet {
             align-self: center;
             width: 7.5rem;
+        }
+
+        @include desktop {
+            width: 10rem;
         }
     }
 

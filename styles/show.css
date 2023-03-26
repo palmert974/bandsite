@@ -60,6 +60,7 @@ img {
   font-size: 1.25rem;
   line-height: 2rem;
   font-weight: 600;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .footer__header {
@@ -240,6 +241,7 @@ img {
   font-family: "Avenir", sans-serif;
   font-size: 1.25rem;
   line-height: 2rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .footer__header {
@@ -358,8 +360,8 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .shows-hero__overlay {
-    padding-top: 16rem;
-    padding-bottom: 16rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -440,6 +442,12 @@ body {
     line-height: 1.5rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .shows-events {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
 @media screen and (min-width: 1280px) {
   .shows-events {
     display: flex;
@@ -452,6 +460,10 @@ body {
 .shows-events__text {
   padding-left: 1rem;
   padding-right: 1rem;
+  font-family: "Avenir", sans-serif;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .shows-events__text {
@@ -463,6 +475,12 @@ body {
   .shows-events__text {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows-events__text {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
 }
 .shows-events__row {
@@ -484,11 +502,11 @@ body {
     padding-right: 8rem;
   }
 }
-.shows-events__row.selected {
-  background-color: #E1E1E1;
-}
 .shows-events__row:hover {
   background-color: #FAFAFA;
+}
+.shows-events__row-selected {
+  background-color: #E1E1E1;
 }
 @media screen and (min-width: 768px) {
   .shows-events__row {
@@ -511,6 +529,11 @@ body {
   .shows-events__date-header, .shows-events__venue-header, .shows-events__location-header {
     display: block;
     width: 7.5rem;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    color: #AFAFAF;
+    font-weight: 400;
   }
 }
 @media screen and (min-width: 768px) {
@@ -588,6 +611,11 @@ body {
     width: 7.5rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows-events__date {
+    width: 10rem;
+  }
+}
 .shows-events__venue, .shows-events__location {
   font-family: "Avenir", sans-serif;
   font-size: 0.8125rem;
@@ -612,6 +640,11 @@ body {
   .shows-events__venue, .shows-events__location {
     align-self: center;
     width: 7.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-events__venue, .shows-events__location {
+    width: 10rem;
   }
 }
 .shows-events__button {

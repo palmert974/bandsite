@@ -30,7 +30,7 @@
   font-family: 'Avenir', sans-serif;
   font-size: 1.25rem;
   line-height: 2rem;
-
+  font-weight: 600;
 
   @include tablet {
     font-size: 2.25rem;
@@ -148,6 +148,9 @@
   @include tablet {
     display: block;
     width: 7.5rem;
+    @include label-copy;
+    color: $site-primary-silver;
+    font-weight: 400;
   }
 }
 
@@ -173,4 +176,9 @@
     align-self: center;
     width: 7.5rem;
   }
+
+  @include desktop {
+    width: 10rem;
+  }
+
 }

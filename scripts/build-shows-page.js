@@ -107,3 +107,15 @@ function displayShow(showObj) {
 shows__array.forEach(function (show) {
   displayShow(show);
 });
+
+let rows = document.querySelectorAll(".shows-events__row");
+
+rows.forEach((row) => {
+  row.addEventListener("click", () => {
+    rows.forEach((r) => {
+      r.classList.remove("shows-events__row-selected");
+    });
+
+    row.classList.add("shows-events__row-selected");
+  });
+});
