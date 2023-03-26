@@ -36,7 +36,7 @@ let shows__array = [
   },
 ];
 
-let table = document.querySelector(".shows-events");
+let table = document.querySelector(".shows-events__shows");
 let divTable = document.createElement("div");
 divTable.className = "shows-events__header-row";
 
@@ -101,7 +101,7 @@ function displayShow(showObj) {
   shows__button.classList.add("shows-events__button");
   shows__row.appendChild(shows__button);
 
-  document.querySelector(".shows-events").appendChild(shows__row);
+  table.appendChild(shows__row);
 }
 
 shows__array.forEach(function (show) {

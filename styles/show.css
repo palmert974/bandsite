@@ -36,6 +36,7 @@ img {
   flex-wrap: wrap;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -58,6 +59,7 @@ img {
   font-family: "Avenir", sans-serif;
   font-size: 1.25rem;
   line-height: 2rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .footer__header {
@@ -70,11 +72,32 @@ img {
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
+.footer__personal-info b {
+  font-weight: 600;
+}
 @media screen and (min-width: 768px) {
   .footer__personal-info {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
+.footer__personal-name {
+  margin-bottom: 0;
+}
+.footer__personal-company {
+  margin-top: 0;
+}
+.footer__personal-street {
+  margin-bottom: 0;
+}
+.footer__personal-city {
+  margin-top: 0;
+}
+.footer__personal-email {
+  margin-bottom: 2rem;
+}
+.footer__copyright {
+  margin-bottom: 2rem;
 }
 
 .nav-bar {
@@ -308,6 +331,7 @@ body {
 .shows-hero {
   background-image: url("/assets/Images/Photo-gallery-3.jpg");
   background-size: cover;
+  transform: scaleX(-1);
 }
 .shows-hero__overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -315,6 +339,10 @@ body {
   padding-bottom: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  transform: scaleX(-1);
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .shows-hero__overlay {
@@ -334,6 +362,21 @@ body {
     padding-bottom: 16rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows-hero__song {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.shows-hero__song iframe {
+  max-width: 25rem;
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__song iframe {
+    width: 27.5rem;
+    max-width: 27.5rem;
+  }
+}
 .shows-hero__header {
   color: #FFF;
   font-family: "Avenir", sans-serif;
@@ -342,6 +385,7 @@ body {
   font-weight: 600;
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 768px) {
   .shows-hero__header {
@@ -355,6 +399,7 @@ body {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 600;
+  margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
   .shows-hero__text {
@@ -394,6 +439,15 @@ body {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+}
+@media screen and (min-width: 1280px) {
+  .shows-events {
+    display: flex;
+  }
+}
+.shows-events__shows {
+  display: flex;
+  flex-direction: column;
 }
 .shows-events__text {
   padding-left: 1rem;
@@ -443,6 +497,13 @@ body {
     align-content: center;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows-events__row {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    min-width: 50rem;
+  }
+}
 .shows-events__date-header, .shows-events__venue-header, .shows-events__location-header {
   display: none;
 }
@@ -470,6 +531,12 @@ body {
   .shows-events__header-row {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-events__header-row {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 .shows-events__header-button {

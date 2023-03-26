@@ -36,6 +36,7 @@ img {
   flex-wrap: wrap;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -58,6 +59,7 @@ img {
   font-family: "Avenir", sans-serif;
   font-size: 1.25rem;
   line-height: 2rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .footer__header {
@@ -70,11 +72,32 @@ img {
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
+.footer__personal-info b {
+  font-weight: 600;
+}
 @media screen and (min-width: 768px) {
   .footer__personal-info {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
+.footer__personal-name {
+  margin-bottom: 0;
+}
+.footer__personal-company {
+  margin-top: 0;
+}
+.footer__personal-street {
+  margin-bottom: 0;
+}
+.footer__personal-city {
+  margin-top: 0;
+}
+.footer__personal-email {
+  margin-bottom: 2rem;
+}
+.footer__copyright {
+  margin-bottom: 2rem;
 }
 
 .nav-bar {
@@ -549,6 +572,7 @@ body {
   font-family: "Avenir", sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
+  padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .bio-conversation__form {
@@ -757,12 +781,6 @@ body {
     min-width: 9.375rem;
     padding-right: 2rem;
     padding-left: 2rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .bio-conversation__submit-button {
-    display: flex;
-    justify-content: flex-end;
   }
 }
 .bio-conversation__submit {

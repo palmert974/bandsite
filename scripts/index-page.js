@@ -1,4 +1,4 @@
-const conversationComments = [
+const defaultComments = [
   {
     name: "Connor Walton",
     date: "02/17/2021",
@@ -21,6 +21,8 @@ const conversationComments = [
       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough!",
   },
 ];
+
+let conversationComments = [];
 
 const commentsDiv = document.querySelector(".bio-conversation__comments");
 const defaultPic = "/assets/Images/MercrurySquare.png";
@@ -68,6 +70,14 @@ function createCommentElement(commentObj) {
   return commentCard;
 }
 
+function clearComments() {
+  while (commentsDiv.firstChild) {
+    commentsDiv.removeChild(commentsDiv.firstChild);
+  }
+}
+
+conversationComments = defaultComments;
+
 conversationComments.forEach((comment) => {
   const commentElement = createCommentElement(comment);
   commentsDiv.appendChild(commentElement);
@@ -76,10 +86,14 @@ conversationComments.forEach((comment) => {
 function displayComment(comment) {
   const commentsSection = document.querySelector("#comments");
 
-  //commentsSection.innerHTML = "";
+  conversationComments.unshift(comment);
 
-  let newCard = createCommentElement(comment);
-  commentsDiv.insertBefore(newCard, commentsDiv.firstChild);
+  clearComments();
+
+  conversationComments.forEach((comment) => {
+    const commentElement = createCommentElement(comment);
+    commentsDiv.appendChild(commentElement);
+  });
 }
 
 function handleFormSubmit(e) {
@@ -98,10 +112,11 @@ function handleFormSubmit(e) {
     date: day,
   };
 
-  conversationComments.unshift(commentData);
   displayComment(commentData);
+
+  e.target.name.value = "";
+  e.target.comment.value = "";
 }
 
 const formContainer = document.querySelector(".bio-conversation__form");
 formContainer.addEventListener("submit", handleFormSubmit);
-// renderComment();

@@ -10,17 +10,38 @@ body {
 .shows-hero {
     background-image: url("/assets/Images/Photo-gallery-3.jpg");
     background-size: cover;
-
+    transform: scaleX(-1);
 
     &__overlay {
         background-color: rgba(0, 0, 0, 0.5);
         padding-top: $site-padding-small;
         padding-bottom: $site-padding-small;
         @include site-sides;
+        transform: scaleX(-1);
+        display: flex;
+        align-content: space-around;
+        flex-direction: column;
 
         @include desktop {
             padding-top: 16rem;
             padding-bottom: 16rem;
+        }
+    }
+
+    &__song {
+
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        iframe {
+            max-width: 25rem;
+
+            @include desktop {
+                width: 27.5rem;
+                max-width: 27.5rem;
+            }
         }
     }
 
@@ -29,12 +50,14 @@ body {
         @include page-header;
         display: flex;
         flex-direction: column;
+        margin-top: $site-padding-xsmall;
     }
 
     &__text {
         color: $site-primary-white;
         @include body-copy;
         font-weight: 600;
+        margin-bottom: 0;
     }
 
     .mobilePrestitial {
@@ -51,6 +74,15 @@ body {
 .shows-events {
     @include body-copy;
     padding-bottom: $site-padding-xsmall;
+
+    @include desktop {
+        display: flex;
+    }
+
+    &__shows {
+        display: flex;
+        flex-direction: column;
+    }
 
     &__text {
         @include site-sides;
@@ -75,6 +107,12 @@ body {
             justify-content: space-between;
             align-content: center;
         }
+
+        @include desktop {
+            padding-left: $site-padding-small;
+            padding-right: $site-padding-small;
+            min-width: 50rem;
+        }
     }
 
     &__date-header,
@@ -89,6 +127,11 @@ body {
             display: flex;
             justify-content: space-between;
             @include site-sides;
+        }
+
+        @include desktop {
+            padding-left: $site-padding-small;
+            padding-right: $site-padding-small;
         }
     }
 

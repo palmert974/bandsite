@@ -141,6 +141,7 @@ body {
 	&__form {
 		width: 94%;
 		@include body-copy;
+		padding-bottom: $site-padding-xsmall;
 
 		@include tablet {
 			width: auto;
@@ -298,10 +299,6 @@ body {
 	&__submit-button {
 		@include site-button;
 
-		@include tablet {
-			display: flex;
-			justify-content: flex-end;
-		}
 	}
 
 	&__submit {

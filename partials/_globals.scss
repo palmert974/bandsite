@@ -24,6 +24,7 @@ img {
 	flex-direction: column;
 	flex-wrap: wrap;
 	@include site-sides;
+	margin-top: $site-padding-xsmall;
 
 	@include tablet {
 		flex-direction: row;
@@ -31,10 +32,35 @@ img {
 
 	&__header {
 		@include section-header;
+		font-weight: 600;
 	}
 
 	&__personal-info {
 		@include footer-copy;
+	}
+
+	&__personal-name {
+		@include no-bottom-margin;
+	}
+
+	&__personal-company {
+		@include no-top-margin;
+	}
+
+	&__personal-street {
+		@include no-bottom-margin;
+	}
+
+	&__personal-city {
+		@include no-top-margin;
+	}
+
+	&__personal-email {
+		margin-bottom: $site-padding-medium;
+	}
+
+	&__copyright {
+		margin-bottom: $site-padding-medium;
 	}
 }
 
