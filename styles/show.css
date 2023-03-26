@@ -299,4 +299,183 @@ img {
   max-width: 1.5rem;
   max-height: 1.5rem;
   padding-right: 4rem;
+}
+
+body {
+  color: rgb(0, 0, 0);
+}
+
+.shows-hero {
+  background-image: url("/assets/Images/Photo-gallery-3.jpg");
+  background-size: cover;
+}
+.shows-hero__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero__overlay {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__overlay {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__overlay {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+  }
+}
+.shows-hero__header {
+  color: #FFF;
+  font-family: "Avenir", sans-serif;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero__header {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+.shows-hero__text {
+  color: #FFF;
+  font-family: "Avenir", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .shows-hero__text {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-hero__text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+.shows-hero .mobilePrestitial {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  display: none;
+}
+
+.shows-events {
+  font-family: "Avenir", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-events {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-events {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+.shows-events__text {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__text {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-events__text {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+.shows-events__row {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #E1E1E1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__row {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-events__row {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+.shows-events__date-header, .shows-events__venue-header, .shows-events__location-header {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__date-header, .shows-events__venue-header, .shows-events__location-header {
+    display: block;
+  }
+}
+.shows-events__header {
+  color: #AFAFAF;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.shows-events__date {
+  font-weight: 600;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.shows-events__venue, .shows-events__location {
+  font-family: "Avenir", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .shows-events__venue, .shows-events__location {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-events__venue, .shows-events__location {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+.shows-events__button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #FFF;
+  background-color: #323232;
+  border-radius: 0.25rem;
+  height: 2.5rem;
 }/*# sourceMappingURL=show.css.map */

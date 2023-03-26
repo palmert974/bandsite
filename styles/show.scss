@@ -3,162 +3,90 @@
 @use '../partials/typography' as *;
 @use '../partials/variables' as *;
 
+body {
+    color: rgb(0, 0, 0);
+}
 
-// .shows-hero
-//   position: relative
-
-//   &___overlayer
-//     position: absolute
-//     top: 0
-//     left: 0
-//     width: 100%
-//     height: 100%
-//     background-color: rgba(0, 0, 0, 0.5)
-
-//   .shows__header
-//     position: relative
-//     z-index: 1
-//     padding: 4rem 0
-
-//     .shows__text
-//       font-size: 2.4rem
-//       font-weight: 700
-//       text-align: center
-
-//   .shows
-//     padding: 6rem 0
-
-//     &__title
-//       font-size: 4rem
-//       font-weight: 700
-//       text-align: center
-//       margin-bottom: 6rem
-
-//     &__table
-//       display: flex
-//       flex-direction: column
-
-//     .tablet__header
-//       display: flex
-//       justify-content: space-between
-//       margin-bottom: 2rem
-
-//       &__head
-//         font-size: 1.6rem
-//         font-weight: 700
-//         color: #8f8f8f
-//         text-transform: uppercase
-//         letter-spacing: 0.2rem
-
-//     .shows__card
-//       border-radius: 0.8rem
-//       background-color: #fff
-//       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1)
-//       padding: 4rem
-//       margin-bottom: 4rem
-
-//       &__header
-//         font-size: 1.6rem
-//         font-weight: 700
-//         color: #8f8f8f
-//         text-transform: uppercase
-//         letter-spacing: 0.2rem
-//         margin-bottom: 2rem
-
-//       h3
-//         font-size: 3.2rem
-//         font-weight: 700
-//         margin-bottom: 2rem
-
-//       p
-//         font-size: 1.6rem
-//         font-weight: 400
-//         margin-bottom: 1rem
-
-//       .shows__button
-//         font-size: 1.6rem
-//         font-weight: 700
-//         text-transform: uppercase
-//         letter-spacing: 0.2rem
-//         color: #fff
-//         background-color: #daa520
-//         border: none
-//         border-radius: 0.8rem
-//         padding: 1.6rem 2.4rem
-//         margin-top: 2rem
-//         transition: background-color 0.3s ease-in-out
-
-//         &:hover
-//           background-color: #c6951e
-
-// .shows {
-//     box-sizing: border-box;
-//     padding-left: 1rem;
-//     margin-right: 1rem;
-//     margin-top: 2rem;
-//     margin-bottom: 2.5rem;
-
-//     @include tablet {
-//         width: 100%;
-//         padding-left: 1.5rem;
-//     }
-
-//     @include desktop {
-//         padding-left: 11.25rem;
-//         display: flex;
-//         width: auto;
-//     }
-
-//     &__table {
-//         margin-top: 1.875rem;
+.shows-hero {
+    background-image: url("/assets/Images/Photo-gallery-3.jpg");
+    background-size: cover;
 
 
+    &__overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-top: $site-padding-small;
+        padding-bottom: $site-padding-small;
+        @include site-sides;
 
-//         @include tablet {
-//             text-align: start;
-//             margin-right: 1.5rem;
-//         }
+        @include desktop {
+            padding-top: 16rem;
+            padding-bottom: 16rem;
+        }
+    }
 
-//         @include desktop {
-//             margin-left: 7.5rem;
-//             width: 65%;
-//         }
-//     }
+    &__header {
+        color: $site-primary-white;
+        @include page-header;
+    }
 
-//     &__header {
-//         color: $site-primary-silver;
-//         font-family: "Avenir", sans-serif;
+    &__text {
+        color: $site-primary-white;
+        @include body-copy;
+        font-weight: 600;
+    }
 
-//         @include tablet {
-//             display: none;
-//         }
-//     }
+    .mobilePrestitial {
+        text-align: center;
+        background: rgba(0, 0, 0, .4);
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        display: none;
 
-//     &__title {
-//         margin: 0;
+    }
+}
 
-//         @include desktop {
-//             margin-top: 1.5625rem;
-//         }
-//     }
+.shows-events {
+    @include body-copy;
+    padding-bottom: $site-padding-xsmall;
 
-//     &__button {
-//         height: 3.125rem;
-//         width: 95%;
-//         background-color: $site-secondary-black;
-//         color: $site-primary-white;
-//         font-family: "Avenir", sans-serif;
-//         font-size: 0.9rem;
-//         margin-bottom: .625rem;
-//         border-radius: .3125rem;
-//         width: 100%;
-//         border: none;
+    &__text {
+        @include site-sides;
+    }
 
+    &__row {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $site-secondary-mercury;
+        @include site-sides;
+    }
 
-//         @include tablet {
-//             width: 25%;
-//         }
+    &__date-header,
+    &__venue-header,
+    &__location-header {
+        @include shows-section-header;
+    }
 
+    &__header {
+        @include shows-header;
+    }
 
-//     }
-// }
+    &__date {
+        @include shows-date;
+    }
+
+    &__venue,
+    &__location {
+        @include body-copy;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__button {
+        margin-top: $site-padding-xsmall;
+        margin-bottom: $site-padding-xsmall;
+        @include site-button;
+    }
+
+}

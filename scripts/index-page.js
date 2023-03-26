@@ -1,88 +1,107 @@
-let conversationComments = [
+const conversationComments = [
   {
-    name: "Connor Walton ",
+    name: "Connor Walton",
     date: "02/17/2021",
+    profilePicture: "/assets/Images/MercrurySquare.png",
     comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains. ",
+      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
   },
   {
-    name: "Emilie Beach ",
+    name: "Emilie Beach",
     date: "01/09/2021",
+    profilePicture: "/assets/Images/MercrurySquare.png",
     comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day. !",
+      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day!",
   },
   {
-    name: "Miles Acosta ",
+    name: "Miles Acosta",
     date: "12/20/2020",
+    profilePicture: "/assets/Images/MercrurySquare.png",
     comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough. !",
+      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough!",
   },
 ];
-let commentsDiv = document.querySelector(".conversation__comments");
-function displayComment(commentObj) {
-  let comments__card = document.createElement("div");
-  comments__card.className = "conversation__card";
 
-  let comment__row = document.createElement("div");
-  comment__row.className = "conversation__row";
+const commentsDiv = document.querySelector(".bio-conversation__comments");
+const defaultPic = "/assets/Images/MercrurySquare.png";
+const date = new Date();
 
-  let column__picture = document.createElement("div");
-  column__picture.className = "conversation__picture";
-  comment__row.appendChild(column__picture);
+function createCommentElement(commentObj) {
+  const commentCard = document.createElement("div");
+  commentCard.className = "bio-conversation__text-area";
 
-  let profile__picture = document.createElement("img");
-  profile__picture.src = "";
-  profile__picture.className = "conversation__profile-picture";
-  column__picture.appendChild(profile__picture);
+  const commentRow = document.createElement("div");
+  commentRow.className = "bio-conversation__row";
 
-  let column__details = document.createElement("div");
-  column__details.className = "conversation__details";
-  comment__row.appendChild(column__details);
+  const columnPicture = document.createElement("div");
+  columnPicture.className = "bio-conversation__picture";
+  commentRow.appendChild(columnPicture);
 
-  let column__namedate = document.createElement("div");
-  column__namedate.className = "conversation__nameAndDate";
+  const profilePicture = document.createElement("img");
+  profilePicture.className = "bio-conversation__profile-picture";
+  profilePicture.src = commentObj["profilePicture"];
+  columnPicture.appendChild(profilePicture);
 
-  let comment__name = document.createElement("p");
-  comment__name.innerText = commentObj["name"];
-  comment__name.className = "conversation__nameAndDate-name";
-  column__namedate.appendChild(comment__name);
+  const columnDetails = document.createElement("div");
+  columnDetails.className = "bio-conversation__details";
+  commentRow.appendChild(columnDetails);
 
-  let comment__date = document.createElement("p");
-  comment__date.className = "conversation__nameAndDate-date";
-  comment__date.innerText = commentObj["date"];
-  column__namedate.appendChild(comment__date);
-  column__details.append(column__namedate);
+  const columnNamedate = document.createElement("div");
+  columnNamedate.className = "bio-conversation__label";
 
-  let comment__text = document.createElement("p");
-  comment__text.innerText = commentObj["comment"];
-  column__details.appendChild(comment__text);
-  comments__card.appendChild(comment__row);
-  commentsDiv.appendChild(comments__card);
+  const commentName = document.createElement("label");
+  commentName.innerText = commentObj["name"];
+  commentName.className = "bio-conversation__label";
+  columnNamedate.appendChild(commentName);
+
+  const commentDate = document.createElement("p");
+  commentDate.className = "bio-conversation__date";
+  commentDate.innerText = commentObj["date"];
+  columnNamedate.appendChild(commentDate);
+  columnDetails.append(columnNamedate);
+
+  const commentText = document.createElement("p");
+  commentText.innerText = commentObj["comment"];
+  columnDetails.appendChild(commentText);
+  commentCard.appendChild(commentRow);
+
+  return commentCard;
 }
-for (let i = 0; i < conversationComments.length; i++) {
-  displayComment(conversationComments[i]);
-}
 
-let form = document.querySelector(".conversation__form");
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  let newDate = new Date();
-  let currentDate =
-    newDate.getMonth() +
-    1 +
-    "/" +
-    newDate.getDate() +
-    "/" +
-    newDate.getFullYear();
-  let newCommentObj = {
-    name: e.target.name.value,
-    date: currentDate,
-    comment: e.target.comment.value,
-  };
-  conversationComments.unshift(newCommentObj);
-  commentsDiv.innerText = "";
-  for (let i = 0; i < conversationComments.length; i++) {
-    displayComment(conversationComments[i]);
-  }
-  form.reset();
+conversationComments.forEach((comment) => {
+  const commentElement = createCommentElement(comment);
+  commentsDiv.appendChild(commentElement);
 });
+
+function displayComment(comment) {
+  const commentsSection = document.querySelector("comments");
+
+  //commentsSection.innerHTML = "";
+
+  let newCard = createCommentElement(comment);
+  commentsDiv.insertBefore(newCard, commentsDiv.firstChild);
+}
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+
+  let day = date.toLocaleDateString();
+  let month = date.getMonth();
+  let year = date.getFullYear();
+
+  let currrentDate = "${month}/${day}/${year}";
+
+  const commentData = {
+    name: e.target.name.value,
+    comment: e.target.comment.value,
+    profilePicture: defaultPic,
+    date: day,
+  };
+
+  conversationComments.unshift(commentData);
+  displayComment(commentData);
+}
+
+const formContainer = document.querySelector(".bio-conversation__form");
+formContainer.addEventListener("submit", handleFormSubmit);
+// renderComment();

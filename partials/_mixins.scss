@@ -18,7 +18,7 @@
   font-family: 'Avenir', sans-serif;
   font-size: 1.25rem;
   line-height: 2rem;
-
+  font-weight: 600;
 
   @include tablet {
     font-size: 3.75rem;
@@ -79,6 +79,25 @@
   }
 }
 
+@mixin label-copy {
+  font-size: .625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+@mixin site-button {
+  border: none;
+  background-color: $site-primary-black;
+  color: $site-primary-white;
+  height: 2.5rem;
+
+  @include tablet {
+    min-width: 9.375rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
 @mixin site-sides {
   padding-left: $site-padding-side-mobile;
   padding-right: $site-padding-side-mobile;
@@ -99,5 +118,44 @@
 }
 
 @mixin no-bottom-margin {
+  margin-bottom: 0;
+}
+
+@mixin site-button {
+  width: 100%;
+  color: $site-primary-white;
+  background-color: $site-primary-black;
+  border-radius: .25rem;
+  height: 2.5rem;
+
+}
+
+@mixin comment-name {
+  font-weight: 600;
+}
+
+@mixin comment-date {
+  font-weight: 400;
+}
+
+@mixin shows-section-header {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+@mixin shows-header {
+  color: $site-primary-silver;
+  @include label-copy;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+@mixin shows-date {
+  font-weight: 600;
+  padding-top: 0;
+  margin-top: 0;
   margin-bottom: 0;
 }

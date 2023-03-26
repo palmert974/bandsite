@@ -339,6 +339,7 @@ body {
   font-family: "Avenir", sans-serif;
   font-size: 1.25rem;
   line-height: 2rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .bio-hero__header {
@@ -588,6 +589,21 @@ body {
 }
 .bio-conversation__details {
   width: 90%;
+  font-family: "Avenir", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .bio-conversation__details {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bio-conversation__details {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 .bio-conversation__details p {
   display: inline-block;
@@ -600,15 +616,38 @@ body {
     width: 28.75rem;
   }
 }
+.bio-conversation__label {
+  color: #323232;
+  display: flex;
+  align-content: space-between;
+  justify-content: start;
+  width: 100%;
+  align-items: center;
+  font-weight: 600;
+}
+.bio-conversation__date {
+  color: #AFAFAF;
+  font-weight: 400;
+}
 .bio-conversation__input {
   border: 0.125rem solid #E1E1E1;
   border-radius: 0.1875rem;
+  background-color: #FAFAFA;
   width: 100%;
   height: 2.5rem;
   line-height: 2em;
   padding-left: 0.625rem;
   margin-bottom: 0.625rem;
   box-sizing: border-box;
+  font-family: "Avenir", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@media screen and (min-width: 768px) {
+  .bio-conversation__input {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .bio-conversation__input {
@@ -662,6 +701,15 @@ body {
   padding-left: 0.625rem;
   margin-bottom: 0.625rem;
   box-sizing: border-box;
+  font-family: "Avenir", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@media screen and (min-width: 768px) {
+  .bio-conversation textarea {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .bio-conversation textarea {
@@ -678,28 +726,29 @@ body {
     justify-content: flex-start;
   }
 }
-.bio-conversation__nameAndDate-date {
-  color: #AFAFAF;
-}
-.bio-conversation__card {
+.bio-conversation__text-area {
   width: 94%;
   border-bottom: 0.0625rem solid #E1E1E1;
 }
-.bio-conversation__card:first-of-type {
+.bio-conversation__text-area:first-of-type {
   border-top: 0.0625rem solid #E1E1E1;
 }
 @media screen and (min-width: 768px) {
-  .bio-conversation__card {
+  .bio-conversation__text-area {
     width: 100%;
   }
 }
 @media screen and (min-width: 1280px) {
-  .bio-conversation__card {
+  .bio-conversation__text-area {
     width: 33.125rem;
   }
 }
 .bio-conversation__submit-button {
   width: 100%;
+  color: #FFF;
+  background-color: #323232;
+  border-radius: 0.25rem;
+  height: 2.5rem;
 }
 @media screen and (min-width: 768px) {
   .bio-conversation__submit-button {
@@ -711,7 +760,6 @@ body {
   display: block;
   height: 2.5rem;
   width: 100%;
-  background-color: #323232;
   color: #FFF;
   border-radius: 0.3125rem;
   border: none;
