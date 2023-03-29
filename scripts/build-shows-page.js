@@ -1,7 +1,3 @@
-//const baseURL = 'https://project-1-api.herokuapp.com/';
-
-
-
 let shows__array = [
   {
     date: "Mon Sep 06 2021",
@@ -76,7 +72,11 @@ function displayShow(showObj) {
   shows__row.appendChild(shows__dateText);
 
   let shows__date = document.createElement("p");
-  shows__date.innerText = showObj["date"];
+
+  console.log(showObj);
+  let d = new Date(showObj.date);
+
+  shows__date.innerText = d.toLocaleDateString();
   shows__date.className = "shows-events__date";
   shows__row.appendChild(shows__date);
 
@@ -86,7 +86,7 @@ function displayShow(showObj) {
   shows__row.appendChild(shows__venueText);
 
   let shows__venue = document.createElement("p");
-  shows__venue.innerText = showObj["venue"];
+  shows__venue.innerText = showObj["place"];
   shows__venue.className = "shows-events__venue";
   shows__row.appendChild(shows__venue);
 
@@ -108,8 +108,17 @@ function displayShow(showObj) {
   table.appendChild(shows__row);
 }
 
-shows__array.forEach(function (show) {
-  displayShow(show);
+const showsUrl =
+  "https://project-1-api.herokuapp.com/showdates?api_key=d510c716-cbf6-4fd7-b185-17b9bc7cb63a";
+
+axios.get(showsUrl).then((response) => {
+  let data = response.data;
+
+  console.log(data);
+
+  data.forEach((show) => {
+    displayShow(show);
+  });
 });
 
 let rows = document.querySelectorAll(".shows-events__row");

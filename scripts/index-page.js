@@ -41,7 +41,7 @@ function createCommentElement(commentObj) {
 
   const profilePicture = document.createElement("img");
   profilePicture.className = "bio-conversation__profile-picture";
-  profilePicture.src = commentObj["profilePicture"];
+  profilePicture.src = defaultPic;
   columnPicture.appendChild(profilePicture);
 
   const columnDetails = document.createElement("div");
@@ -58,7 +58,11 @@ function createCommentElement(commentObj) {
 
   const commentDate = document.createElement("p");
   commentDate.className = "bio-conversation__date";
-  commentDate.innerText = commentObj["date"];
+
+  console.log(commentObj);
+  let d = new Date(commentObj.timestamp);
+
+  commentDate.innerText = d.toLocaleDateString();
   columnNamedate.appendChild(commentDate);
   columnDetails.append(columnNamedate);
 
@@ -76,11 +80,16 @@ function clearComments() {
   }
 }
 
-conversationComments = defaultComments;
+const commentUrl =
+  "https://project-1-api.herokuapp.com/comments?api_key=d510c716-cbf6-4fd7-b185-17b9bc7cb63a";
 
-conversationComments.forEach((comment) => {
-  const commentElement = createCommentElement(comment);
-  commentsDiv.appendChild(commentElement);
+axios.get(commentUrl).then((response) => {
+  let data = response.data;
+
+  data.forEach((comment) => {
+    const commentElement = createCommentElement(comment);
+    commentsDiv.appendChild(commentElement);
+  });
 });
 
 function displayComment(comment) {
@@ -90,9 +99,37 @@ function displayComment(comment) {
 
   clearComments();
 
-  conversationComments.forEach((comment) => {
-    const commentElement = createCommentElement(comment);
-    commentsDiv.appendChild(commentElement);
+  axios.get(commentUrl).then((response) => {
+    let data = response.data;
+    let responseComments = [];
+
+    console.log(data);
+
+    data.forEach((c) => {
+      console.log(c);
+
+      if (responseComments.length == 0) {
+        responseComments.push(c);
+      } else {
+        console.log("else");
+        for (let i = 0; i < responseComments.length; i++) {
+          console.log(responseComments[i].timestamp);
+          console.log(c.timestamp);
+
+          //remember to use Array.sort to figure out dates/// insert before /pre append//
+          if (c.timestamp > responseComments[i].timestamp) {
+            responseComments.slice(i, 0);
+          }
+        }
+      }
+    });
+
+    responseComments.forEach((c) => {
+      const commentElement = createCommentElement(c);
+      commentsDiv.appendChild(commentElement);
+    });
+
+    console.log(responseComments);
   });
 }
 
@@ -108,9 +145,11 @@ function handleFormSubmit(e) {
   const commentData = {
     name: e.target.name.value,
     comment: e.target.comment.value,
-    profilePicture: defaultPic,
-    date: day,
   };
+
+  axios.post(commentUrl, commentData).then((response) => {
+    console.log(response.data);
+  });
 
   displayComment(commentData);
 
