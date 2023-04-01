@@ -1,27 +1,3 @@
-const defaultComments = [
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    profilePicture: "/assets/Images/MercrurySquare.png",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    profilePicture: "/assets/Images/MercrurySquare.png",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day!",
-  },
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    profilePicture: "/assets/Images/MercrurySquare.png",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough!",
-  },
-];
-
 let conversationComments = [];
 
 const commentsDiv = document.querySelector(".bio-conversation__comments");
@@ -83,19 +59,9 @@ function clearComments() {
 const commentUrl =
   "https://project-1-api.herokuapp.com/comments?api_key=d510c716-cbf6-4fd7-b185-17b9bc7cb63a";
 
-axios.get(commentUrl).then((response) => {
-  let data = response.data;
-
-  data.forEach((comment) => {
-    const commentElement = createCommentElement(comment);
-    commentsDiv.appendChild(commentElement);
-  });
-});
-
-function displayComment(comment) {
+console.log(commentUrl);
+function displayComment() {
   const commentsSection = document.querySelector("#comments");
-
-  conversationComments.unshift(comment);
 
   clearComments();
 
@@ -105,31 +71,18 @@ function displayComment(comment) {
 
     console.log(data);
 
+    data.sort((a, b) => b.timestamp - a.timestamp);
+
+    console.log(data);
+
     data.forEach((c) => {
       console.log(c);
 
-      if (responseComments.length == 0) {
-        responseComments.push(c);
-      } else {
-        console.log("else");
-        for (let i = 0; i < responseComments.length; i++) {
-          console.log(responseComments[i].timestamp);
-          console.log(c.timestamp);
-
-          //remember to use Array.sort to figure out dates/// insert before /pre append//
-          if (c.timestamp > responseComments[i].timestamp) {
-            responseComments.slice(i, 0);
-          }
-        }
-      }
-    });
-
-    responseComments.forEach((c) => {
       const commentElement = createCommentElement(c);
       commentsDiv.appendChild(commentElement);
     });
 
-    console.log(responseComments);
+    console.log(data);
   });
 }
 
@@ -147,11 +100,17 @@ function handleFormSubmit(e) {
     comment: e.target.comment.value,
   };
 
-  axios.post(commentUrl, commentData).then((response) => {
-    console.log(response.data);
-  });
+  axios
+    .post(commentUrl, commentData)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
+    .then((data) => {
+      console.log(data);
 
-  displayComment(commentData);
+      displayComment();
+    });
 
   e.target.name.value = "";
   e.target.comment.value = "";
@@ -159,3 +118,4 @@ function handleFormSubmit(e) {
 
 const formContainer = document.querySelector(".bio-conversation__form");
 formContainer.addEventListener("submit", handleFormSubmit);
+displayComment();
