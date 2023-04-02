@@ -1,134 +1,107 @@
-let shows__array = [
-  {
-    date: "Mon Sep 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Tue Sep 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Sat Nov 6 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Wed Dec 15  2021",
-    venue: "Pres Club",
-    location: "San Francisco, CA",
-  },
-];
-
-let table = document.querySelector(".shows-events__shows");
-let divTable = document.createElement("div");
+const table = document.querySelector(".shows-events__shows");
+const divTable = document.createElement("div");
 divTable.className = "shows-events__header-row";
 
-let headerDates = document.createElement("p");
+const headerDates = document.createElement("p");
 headerDates.innerText = "DATES";
 headerDates.className = "shows-events__date-header";
 
-let headerVenue = document.createElement("p");
+const headerVenue = document.createElement("p");
 headerVenue.innerText = "VENUE";
 headerVenue.className = "shows-events__venue-header";
 
-let headerLocation = document.createElement("p");
+const headerLocation = document.createElement("p");
 headerLocation.innerText = "LOCATION";
 headerLocation.className = "shows-events__location-header";
 
-let shows__headerButton = document.createElement("button");
-shows__headerButton.innerText = "BUY TICKETS";
-shows__headerButton.classList.add("shows-events__header-button");
+const showsHeaderButton = document.createElement("button");
+showsHeaderButton.innerText = "BUY TICKETS";
+showsHeaderButton.classList.add("shows-events__header-button");
 
 divTable.appendChild(headerDates);
 divTable.appendChild(headerVenue);
 divTable.appendChild(headerLocation);
-divTable.appendChild(shows__headerButton);
+divTable.appendChild(showsHeaderButton);
 table.appendChild(divTable);
 
 function displayShow(showObj) {
-  let shows__row = document.createElement("div");
-  shows__row.className = "shows-events__row";
+  const showsRow = document.createElement("div");
+  showsRow.className = "shows-events__row";
 
-  let shows__dateText = document.createElement("h3");
-  shows__dateText.innerText = "DATE";
-  shows__dateText.className = "shows-events__header";
-  shows__row.appendChild(shows__dateText);
+  const showsDateText = document.createElement("h3");
+  showsDateText.innerText = "DATE";
+  showsDateText.className = "shows-events__header";
+  showsRow.appendChild(showsDateText);
 
-  let shows__date = document.createElement("p");
+  const showsDate = document.createElement("p");
 
   console.log(showObj);
-  let d = new Date(showObj.date);
+  const d = new Date(showObj.date);
 
-  shows__date.innerText = d.toLocaleDateString();
-  shows__date.className = "shows-events__date";
-  shows__row.appendChild(shows__date);
+  showsDate.innerText = d.toLocaleDateString();
+  showsDate.className = "shows-events__date";
+  showsRow.appendChild(showsDate);
 
-  let shows__venueText = document.createElement("h3");
-  shows__venueText.innerText = "VENUE";
-  shows__venueText.className = "shows-events__header";
-  shows__row.appendChild(shows__venueText);
+  const showsVenueText = document.createElement("h3");
+  showsVenueText.innerText = "VENUE";
+  showsVenueText.className = "shows-events__header";
+  showsRow.appendChild(showsVenueText);
 
-  let shows__venue = document.createElement("p");
-  shows__venue.innerText = showObj["place"];
-  shows__venue.className = "shows-events__venue";
-  shows__row.appendChild(shows__venue);
+  const showsVenue = document.createElement("p");
+  showsVenue.innerText = showObj["place"];
+  showsVenue.className = "shows-events__venue";
+  showsRow.appendChild(showsVenue);
 
-  let shows__locationText = document.createElement("h3");
-  shows__locationText.innerText = "LOCATION";
-  shows__locationText.className = "shows-events__header";
-  shows__row.appendChild(shows__locationText);
+  const showsLocationText = document.createElement("h3");
+  showsLocationText.innerText = "LOCATION";
+  showsLocationText.className = "shows-events__header";
+  showsRow.appendChild(showsLocationText);
 
-  let shows__location = document.createElement("p");
-  shows__location.innerText = showObj["location"];
-  shows__location.className = "shows-events__location";
-  shows__row.appendChild(shows__location);
+  const showsLocation = document.createElement("p");
+  showsLocation.innerText = showObj["location"];
+  showsLocation.className = "shows-events__location";
+  showsRow.appendChild(showsLocation);
 
-  let shows__button = document.createElement("button");
-  shows__button.innerText = "BUY TICKETS";
-  shows__button.classList.add("shows-events__button");
-  shows__row.appendChild(shows__button);
+  const showsButton = document.createElement("button");
+  showsButton.innerText = "BUY TICKETS";
+  showsButton.classList.add("shows-events__button");
+  showsRow.appendChild(showsButton);
 
-  table.appendChild(shows__row);
+  table.appendChild(showsRow);
 }
 
 const showsUrl =
   "https://project-1-api.herokuapp.com/showdates?api_key=d510c716-cbf6-4fd7-b185-17b9bc7cb63a";
 
-axios.get(showsUrl).then((response) => {
-  let data = response.data;
+axios
+  .get(showsUrl)
+  .then((response) => {
+    const data = response.data;
 
-  console.log(data);
+    console.log(data);
 
-  data.forEach((show) => {
-    displayShow(show);
-  });
-});
-
-let rows = document.querySelectorAll(".shows-events__row");
-
-rows.forEach((row) => {
-  row.addEventListener("click", () => {
-    rows.forEach((r) => {
-      r.classList.remove("shows-events__row-selected");
+    data.forEach((show) => {
+      displayShow(show);
     });
 
-    row.classList.add("shows-events__row-selected");
+    return data;
+  })
+  .then((data) => {
+    const rows = document.querySelectorAll(".shows-events__row");
+
+    console.log(rows);
+
+    addRowsListener(rows);
   });
-});
+
+function addRowsListener(rows) {
+  rows.forEach((row) => {
+    row.addEventListener("click", () => {
+      rows.forEach((r) => {
+        r.classList.remove("shows-events__row-selected");
+      });
+
+      row.classList.add("shows-events__row-selected");
+    });
+  });
+}

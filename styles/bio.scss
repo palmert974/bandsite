@@ -1,4 +1,4 @@
-@use '//styles/partials/globals' as *;
+@use '../styles/partials/globals' as *;
 @use '../styles/partials/mixins' as *;
 @use '../styles/partials/typography' as *;
 @use '../styles/partials/variables' as *;
@@ -214,6 +214,15 @@ body {
 		margin-bottom: .625rem;
 		box-sizing: border-box;
 
+		&:focus {
+			outline: none;
+			border: .125rem solid $site-primary-black;
+		}
+
+		&-error {
+			border: .125rem solid #D22D2D;
+		}
+
 		@include subheader;
 
 		@include tablet {
@@ -252,14 +261,6 @@ body {
 	}
 
 	textarea {
-		background-color: $site-secondary-alabaster;
-		border: .0625rem solid $site-secondary-mercury;
-		border-radius: .1875rem;
-		width: 100%;
-		line-height: 2em;
-		padding-left: .625rem;
-		margin-bottom: .625rem;
-		box-sizing: border-box;
 
 		@include subheader;
 
@@ -280,11 +281,23 @@ body {
 	}
 
 	&__text-area {
-		width: 94%;
+		background-color: $site-secondary-alabaster;
+		border: .0625rem solid $site-secondary-mercury;
+		border-radius: .1875rem;
+		line-height: 2em;
+		padding-left: .625rem;
+		margin-bottom: .625rem;
+		box-sizing: border-box;
+		width: 100%;
 		border-bottom: .0625rem solid $site-secondary-mercury;
 
-		&:first-of-type {
-			border-top: .0625rem solid $site-secondary-mercury;
+		&:focus {
+			outline: none;
+			border: .125rem solid $site-primary-black;
+		}
+
+		&-error {
+			border: .125rem solid #D22D2D;
 		}
 
 		@include tablet {
@@ -299,7 +312,6 @@ body {
 
 	&__submit-button {
 		@include site-button;
-
 	}
 
 	&__submit {

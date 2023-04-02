@@ -1,12 +1,9 @@
-let conversationComments = [];
-
 const commentsDiv = document.querySelector(".bio-conversation__comments");
 const defaultPic = "/assets/Images/MercrurySquare.png";
 const date = new Date();
 
 function createCommentElement(commentObj) {
   const commentCard = document.createElement("div");
-  commentCard.className = "bio-conversation__text-area";
 
   const commentRow = document.createElement("div");
   commentRow.className = "bio-conversation__row";
@@ -36,7 +33,7 @@ function createCommentElement(commentObj) {
   commentDate.className = "bio-conversation__date";
 
   console.log(commentObj);
-  let d = new Date(commentObj.timestamp);
+  const d = new Date(commentObj.timestamp);
 
   commentDate.innerText = d.toLocaleDateString();
   columnNamedate.appendChild(commentDate);
@@ -66,8 +63,7 @@ function displayComment() {
   clearComments();
 
   axios.get(commentUrl).then((response) => {
-    let data = response.data;
-    let responseComments = [];
+    const data = response.data;
 
     console.log(data);
 
@@ -89,11 +85,28 @@ function displayComment() {
 function handleFormSubmit(e) {
   e.preventDefault();
 
-  let day = date.toLocaleDateString();
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
+  const commentInput = document.querySelector(".bio-conversation__input");
 
-  let currrentDate = "${month}/${day}/${year}";
+  const commentText = document.querySelector(".bio-conversation__text-area");
+
+  if (e.target.name.value == "") {
+    commentInput.classList.add("bio-conversation__input-error");
+  }
+
+  if (e.target.comment.value == "") {
+    commentText.classList.add("bio-conversation__text-area-error");
+
+    return;
+  }
+
+  commentInput.classList.remove("bio-conversation__input-error");
+  commentText.classList.remove("bio-conversation__text-area-error");
+
+  const day = date.toLocaleDateString();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+
+  const currrentDate = "${month}/${day}/${year}";
 
   const commentData = {
     name: e.target.name.value,
