@@ -1,5 +1,5 @@
 const commentsDiv = document.querySelector(".bio-conversation__comments");
-const defaultPic = "/assets/Images/MercrurySquare.png";
+const defaultPic = "./assets/Images/MercrurySquare.png";
 const date = new Date();
 
 function createCommentElement(commentObj) {

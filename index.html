@@ -1,148 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BandSite – Bio</title>
+  <link rel="icon" href="assets/Logo/Logo-bandsite.svg" />
+  <link rel="stylesheet" href="styles/bio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__logo" href="./">
+      <img src="assets/Logo/Logo-bandsite.svg" alt="BandSite" />
+    </a>
+    <nav class="site-nav">
+      <a class="site-nav__link site-nav__link--active" href="./">Biography</a>
+      <a class="site-nav__link" href="pages/shows.html">Shows</a>
+    </nav>
+  </header>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href='/styles/bio.css'>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"
-            integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-        <script src="/scripts/index-page.js" defer></script>
-        <title>BANDSITE</title>
-    </head>
+  <main>
+    <section class="hero">
+      <img class="hero__image" src="assets/Images/hero-bio.jpg" alt="Band hero" />
+      <div class="hero__overlay"></div>
+      <h1 class="hero__title">The Bees Knees</h1>
+    </section>
 
-    <body>
-        <header class="header">
-            <nav class="nav-bar">
-                <a href="/index.html" class="nav-bar__logo-container"> <img class="nav-bar__logo"
-                        src="/assets/Logo/Logo-bandsite.svg" alt="Bandsite Logo"> </a>
-                <ul class="nav-bar__links">
-                    <li class="nav-bar__link nav-bar__current">
-                        <a class="nav-bar__link-text" href="/index.html">Biography</a>
-                    </li>
-                    <li class="nav-bar__link">
-                        <a href="/pages/shows.html">Shows</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+    <section class="bio">
+      <h2>About the Musicians</h2>
+      <img class="bio__band" src="assets/Images/band.jpg" alt="Band" />
+      <blockquote class="bio__quote">“We push the limits of our sound with every show.”</blockquote>
+      <div class="bio__grid">
+        <div>
+          <h3>The Bees Knees</h3>
+          <p>Formed in 2019, The Bees Knees is a pop rock band known for energetic performances and catchy hooks.</p>
+        </div>
+        <div>
+          <h3>Lead Vocals: Mohan Muruge</h3>
+          <img class="bio__avatar" src="assets/Images/Mohan-muruge.jpg" alt="Mohan Muruge" />
+        </div>
+      </div>
+    </section>
 
-        <section class="bio-hero">
-            <div class="bio-hero__overlay">
-                <h1 class="bio-hero__header"> The Bees Knees </h1>
-            </div>
-        </section>
+    <section class="gallery">
+      <h2>Photo Gallery</h2>
+      <ul class="gallery__grid">
+        <li><img src="assets/Images/Photo-gallery-1.jpg" alt="Gallery 1" /></li>
+        <li><img src="assets/Images/Photo-gallery-2.jpg" alt="Gallery 2" /></li>
+        <li><img src="assets/Images/Photo-gallery-3.jpg" alt="Gallery 3" /></li>
+        <li><img src="assets/Images/Photo-gallery-4.jpg" alt="Gallery 4" /></li>
+        <li><img src="assets/Images/Photo-gallery-5.jpg" alt="Gallery 5" /></li>
+        <li><img src="assets/Images/Photo-gallery-6.jpg" alt="Gallery 6" /></li>
+        <li><img src="assets/Images/Photo-gallery-7.jpg" alt="Gallery 7" /></li>
+        <li><img src="assets/Images/Photo-gallery-8.jpg" alt="Gallery 8" /></li>
+        <li><img src="assets/Images/Photo-gallery-9.jpg" alt="Gallery 9" /></li>
+      </ul>
+    </section>
 
-        <section class="bio-about">
-            <h2 class="bio-about__header"> About the Musicians</h2>
-            <img src='../assets/images/band.jpg' alt="couple on a bench">
-            <p class="bio-about__quote">"We push each other to be the best. It’s not uncommon for one of us to
-                say ‘this
-                needs to
-                be better, back to the drawing board’ "</p>
-            <p class="bio-about__quotee">- Bryan Teddy, lead vocalist of The Bees Knees</p>
-            <h3 class="bio-about__subheader">The Bees Knees</h3>
-            <div class="bio-about__paragraphs">
-                <p class="bio-about__paragraph">The Bees Knees is a pop rock band originating from San Francisco,
-                    California.
-                    The band
-                    consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist
-                    Kent Zulkee
-                    and drummer Freddie Fischer. The band achieved its first commercial success as an unsigned act,
-                    drawing
-                    attention from manager Cam Adams. Having worked with other popular acts (The Elephant In The
-                    Room, One Trick
-                    Pony, The Cat’s Meow), Adams was confident the band could succeed even further, pushing them to
-                    sign with
-                    Magenta Records. </p>
-                <p class="bio-about__paragraph">From there, the band has soared, gaining international recognition and
-                    ranking
-                    in the top
-                    10 on the Poster Charts. New fans immediately fell in love with the band’s original and organic
-                    attitude,
-                    solidifying their place as one of the hottest and fastest up and coming acts of this century.
-                    Fans
-                    affectionately refer to themselves as “The Hive” and are drawn to their candid and authentic
-                    performances on
-                    stage. Looking forward to touring in the future, The Bees Knees are currently recording their
-                    second studio
-                    album, looking to be released in late 2021.</p>
-            </div>
-        </section>
+    <section class="bio-conversation" id="comments">
+      <h2>Join the Conversation</h2>
+      <form class="bio-conversation__form">
+        <label class="bio-conversation__label" for="name">Name</label>
+        <input class="bio-conversation__input" id="name" name="name" type="text" placeholder="Enter your name" />
+        <label class="bio-conversation__label" for="comment">Comment</label>
+        <textarea class="bio-conversation__text-area" id="comment" name="comment" rows="4" placeholder="Add a new comment"></textarea>
+        <button class="bio-conversation__button" type="submit">Comment</button>
+      </form>
+      <div class="bio-conversation__comments"></div>
+    </section>
+  </main>
 
-        <section class="bio-gallery">
-            <h2 class="bio-gallery__header">Photo Gallery</h2>
-            <div class="bio-gallery__container">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-1.jpg' alt="pink fog">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-2.jpg' alt="women solo">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-3.jpg' alt="hands up">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-4.jpg' alt="women raise hands ">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-5.jpg' alt="confetti hands ">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-6.jpg' alt="guy on mic ">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-7.jpg' alt="stage confetti">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-8.jpg' alt="Dj booth ">
-                <img class="bio-gallery__img-bg" src='../assets/images/Photo-gallery-9.jpg' alt="confetti in crowd">
-            </div>
-        </section>
+  <footer class="site-footer">
+    <ul class="social">
+      <li><a aria-label="Instagram" href="#"><img src="assets/Icons/SVG/Icon-instagram.svg" alt="Instagram" /></a></li>
+      <li><a aria-label="Facebook" href="#"><img src="assets/Icons/SVG/Icon-facebook.svg" alt="Facebook" /></a></li>
+      <li><a aria-label="Twitter" href="#"><img src="assets/Icons/SVG/Icon-twitter.svg" alt="Twitter" /></a></li>
+    </ul>
+    <p>© BandSite</p>
+  </footer>
 
-        <section class="bio-conversation">
-            <h2 class="bio-conversation__header">Join the Conversation</h2>
-            <form action="bio-method" method="post" class="bio-conversation__form">
-                <div class="bio-conversation__row">
-                    <div class="bio-conversation__picture">
-                        <img class="bio-conversation__profile-picture" src="/assets/Images/Mohan-muruge.jpg"
-                            alt="mohan murge">
-                    </div>
-                    <div class="bio-conversation__details">
-                        <label for="bio-name" class="bio-conversation__label">NAME</label>
-                        <input type="text" name="name" id="bio-name" class="bio-conversation__input"
-                            placeholder="Enter your name">
-                        <label for="comment" class="bio-conversation__label">COMMENT</label>
-                        <textarea name="comment" id="comment" class="bio-conversation__text-area" cols="30" rows="5"
-                            placeholder="Add a new comment"></textarea>
-                        <div class="bio-conversation__submit">
-                            <button type="submit" class="bio-conversation__submit-button">COMMENT</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="bio-conversation__comments" id="comments">
-        </section>
-
-        <footer class="footer">
-            <h2 class="footer__header">Get in Touch</h2>
-            <div class="footer__icons">
-                <a> <img src="/assets/Icons/SVG/Icon-instagram.svg" class="fa fa-instagram icon"></a>
-                <a> <img src="/assets/Icons/SVG/Icon-facebook.svg" class="fa fa-facebook icon"></a>
-                <a> <img src="/assets/Icons/SVG/Icon-twitter.svg" class="fa fa-twitter icon"></a>
-            </div>
-            <div class="footer__personal-info">
-                <p class="footer__personal-name"><b>Cam Adams</b></p>
-                <p class="footer__personal-company"><b>Bees Knees Management</b></p>
-                <p class="footer__personal-street">503 Broadway Penthouse, </p>
-                <p class="footer__personal-city"> New York, NY 10012, USA</p>
-                <p class="footer__personal-email">info@thebeeskness.com</p>
-            </div>
-            <div class="footer__personal-info">
-                <p class="footer__personal-name"><b>Pearl Gregg</b></p>
-                <p class="footer__personal-company"><b>Limitless Artist Group</b></p>
-                <p class="footer__personal-street">Booking Agent for</p>
-                <p class="footer__personal-city">USA / South America / Japan</p>
-                <p class="footer__personal-email" href="pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</p>
-            </div>
-            <div class="footer__personal-info">
-                <p class="footer__personal-name"><b>Carson Whyte</b></p>
-                <p class="footer__personal-company"><b>ARCH Entertainment</b></p>
-                <p class="footer__personal-street">Booking Agent for </p>
-                <p class="footer__personal-city">UK / EU / AU </p>
-                <p class="footer__personal-email">cwhyte@archentertainment.com </p>
-            </div>
-            <a href="./index.html" class="footer__logo-container"> <img class="footer__logo"
-                    src="/assets/Logo/Logo-bandsite.svg" alt=""> </a>
-            <p class="footer__copyright fit1">Copyright The Bees Knees © 2021 All Rights Reserve</p>
-        </footer>
-    </body>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="scripts/index-page.js"></script>
+</body>
 </html>
