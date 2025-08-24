@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BandSite – The Bees Knees</title>
+  <link rel="icon" href="assets/Logo/Logo-bandsite.svg" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --bs-dark: #323232;
+      --bs-primary: #E1E1E1;
+      --bs-secondary: #AFAFAF;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Navigation */
+    .navbar-brand img {
+      height: 30px;
+      width: auto;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgba(255,255,255,0.8);
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link.active {
+      color: #fff;
+      border-bottom: 3px solid #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 60vh;
+      min-height: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    
+    .hero-content {
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 80px 0;
+      background: #fafafa;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #323232;
+    }
+    
+    .band-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    
+    .quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #323232;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      border-left: 4px solid #323232;
+      background: white;
+    }
+    
+    .bio-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+    }
+    
+    /* Gallery Section */
+    .gallery-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* Comments Section */
+    .comments-section {
+      padding: 80px 0;
+      background: #fafafa;
+    }
+    
+    .comment-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
+    }
+    
+    .comment-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .comment-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .comment-author {
+      font-weight: 600;
+      color: #323232;
+    }
+    
+    .comment-date {
+      font-size: 0.9rem;
+      color: #999;
+    }
+    
+    .comment-text {
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background: #323232;
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+    
+    .social-links img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="./">
+        <img src="assets/Logo/Logo-bandsite.svg" alt="BandSite" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="./">Biography</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/shows-bootstrap.html">Shows</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="hero-image" src="assets/Images/hero-bio.jpg" alt="The Bees Knees performing" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content animate-fadeInUp">
+      <h1 class="hero-title">The Bees Knees</h1>
+      <p class="lead">Pushing the boundaries of sound with every performance</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">About the Musicians</h2>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <img class="band-image" src="assets/Images/band.jpg" alt="The Bees Knees band" />
+          
+          <blockquote class="quote">
+            "We push each other to be our best. With every performance, we're not just playing music—we're creating an experience that connects with every person in the audience."
+            <footer class="blockquote-footer mt-2">The Bees Knees</footer>
+          </blockquote>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-6">
+          <h3 class="h4 mb-3">The Bees Knees</h3>
+          <p class="bio-content">
+            The Bees Knees is a pop rock band originating from Glasgow, Scotland. The band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. They met at a pub in 2008 and began performing at local venues while balancing their music careers with day jobs.
+          </p>
+          <p class="bio-content">
+            Since becoming a full-time band in 2019, The Bees Knees have gained international recognition. Their unique sound blends catchy pop melodies with rock energy, creating performances that leave audiences wanting more.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="h4 mb-3">Global Impact</h3>
+          <p class="bio-content">
+            The band's breakthrough came with their 2019 single "Glass Onion," which topped charts in 19 countries and earned them their first platinum record. Since then, they've released three studio albums, each showcasing their evolution as artists.
+          </p>
+          <p class="bio-content">
+            Known for their energetic live performances, The Bees Knees have headlined major festivals including Coachella, Glastonbury, and Lollapalooza. Their commitment to connecting with fans has built a loyal global following.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Photo Gallery</h2>
+      <ul class="gallery-grid">
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-1.jpg" alt="Concert photo 1" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-2.jpg" alt="Concert photo 2" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-3.jpg" alt="Concert photo 3" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-4.jpg" alt="Concert photo 4" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-5.jpg" alt="Concert photo 5" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-6.jpg" alt="Concert photo 6" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-7.jpg" alt="Concert photo 7" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-8.jpg" alt="Concert photo 8" />
+        </li>
+        <li class="gallery-item">
+          <img src="assets/Images/Photo-gallery-9.jpg" alt="Concert photo 9" />
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Comments Section -->
+  <section class="comments-section" id="comments">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Join the Conversation</h2>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- Comment Form -->
+          <form class="comment-form" id="commentForm">
+            <h4 class="mb-4">Leave a Comment</h4>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Share your thoughts..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg">
+              <i class="bi bi-chat-dots me-2"></i>Post Comment
+            </button>
+          </form>
+          
+          <!-- Comments Display -->
+          <div class="comments-container mt-5" id="commentsContainer">
+            <!-- Sample comments for demonstration -->
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-author">Connor Walton</span>
+                <span class="comment-date">02/17/2021</span>
+              </div>
+              <p class="comment-text">
+                This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
+              </p>
+            </div>
+            
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-author">Emilie Beach</span>
+                <span class="comment-date">01/09/2021</span>
+              </div>
+              <p class="comment-text">
+                I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.
+              </p>
+            </div>
+            
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-author">Miles Acosta</span>
+                <span class="comment-date">12/20/2020</span>
+              </div>
+              <p class="comment-text">
+                I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h5 class="mb-3">Get in Touch</h5>
+          <p class="mb-0">
+            <strong>The Bees Knees Management</strong><br>
+            503 Broadway Penthouse<br>
+            New York, NY 10012, USA<br>
+            info@thebeesknees.com
+          </p>
+        </div>
+        
+        <div>
+          <h5 class="mb-3">Follow Us</h5>
+          <ul class="social-links">
+            <li>
+              <a href="#" aria-label="Instagram">
+                <img src="assets/Icons/SVG/Icon-instagram.svg" alt="Instagram" />
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Facebook">
+                <img src="assets/Icons/SVG/Icon-facebook.svg" alt="Facebook" />
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Twitter">
+                <img src="assets/Icons/SVG/Icon-twitter.svg" alt="Twitter" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+      
+      <div class="text-center">
+        <p class="mb-0">© 2024 BandSite. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+    // Simple comment form handler
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const comment = document.getElementById('comment').value;
+      const date = new Date().toLocaleDateString('en-US');
+      
+      // Create new comment element
+      const newComment = document.createElement('div');
+      newComment.className = 'comment-card';
+      newComment.innerHTML = `
+        <div class="comment-header">
+          <span class="comment-author">${name}</span>
+          <span class="comment-date">${date}</span>
+        </div>
+        <p class="comment-text">${comment}</p>
+      `;
+      
+      // Add to top of comments
+      const container = document.getElementById('commentsContainer');
+      container.insertBefore(newComment, container.firstChild);
+      
+      // Reset form
+      this.reset();
+      
+      // Show success message
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Posted!';
+      btn.classList.add('btn-success');
+      btn.classList.remove('btn-dark');
+      
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('btn-success');
+        btn.classList.add('btn-dark');
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BandSite – Shows</title>
+  <link rel="icon" href="../assets/Logo/Logo-bandsite.svg" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --bs-dark: #323232;
+      --bs-primary: #E1E1E1;
+      --bs-secondary: #AFAFAF;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Navigation */
+    .navbar-brand img {
+      height: 30px;
+      width: auto;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgba(255,255,255,0.8);
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link.active {
+      color: #fff;
+      border-bottom: 3px solid #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 60vh;
+      min-height: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0.3;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+    
+    .hero-content {
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+    }
+    
+    /* Shows Section */
+    .shows-section {
+      padding: 80px 0;
+      background: #fafafa;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: #323232;
+      text-align: center;
+    }
+    
+    .show-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    
+    .show-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border-left-color: #667eea;
+    }
+    
+    .show-date {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .show-venue {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #323232;
+      margin-bottom: 0.5rem;
+    }
+    
+    .show-location {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    
+    .show-status {
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .status-available {
+      background: #d4f4dd;
+      color: #2d7a3e;
+    }
+    
+    .status-soldout {
+      background: #ffe4e1;
+      color: #c41e3a;
+    }
+    
+    .status-fewleft {
+      background: #fff3cd;
+      color: #856404;
+    }
+    
+    .btn-tickets {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-tickets:hover {
+      transform: scale(1.05);
+      color: white;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-tickets:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    /* Tour Info Section */
+    .tour-info {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .tour-info h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .tour-info p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form .input-group {
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+    
+    .newsletter-form input {
+      border: none;
+      padding: 1rem 1.5rem;
+    }
+    
+    .newsletter-form button {
+      background: #323232;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background: #1a1a1a;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background: #323232;
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+    
+    .social-links img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease;
+    }
+    
+    .animate-delay {
+      animation-delay: 0.2s;
+      animation-fill-mode: both;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index-bootstrap.html">
+        <img src="../assets/Logo/Logo-bandsite.svg" alt="BandSite" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index-bootstrap.html">Biography</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./shows-bootstrap.html">Shows</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="hero-image" src="../assets/Images/hero-bio.jpg" alt="The Bees Knees performing" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content animate-fadeInUp">
+      <h1 class="hero-title">Tour Dates</h1>
+      <p class="hero-subtitle animate-fadeInUp animate-delay">Catch The Bees Knees Live</p>
+      <button class="btn btn-light btn-lg">
+        <i class="bi bi-music-note-beamed me-2"></i>Listen on Spotify
+      </button>
+    </div>
+  </section>
+
+  <!-- Shows Section -->
+  <section class="shows-section">
+    <div class="container">
+      <h2 class="section-title">Upcoming Shows</h2>
+      
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <!-- Show Cards -->
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Monday, December 15, 2024</div>
+                <div class="show-venue">Madison Square Garden</div>
+                <div class="show-location">New York, NY</div>
+                <span class="show-status status-fewleft">Few Tickets Left</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets">
+                  <i class="bi bi-ticket-perforated me-2"></i>Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Wednesday, December 17, 2024</div>
+                <div class="show-venue">The Forum</div>
+                <div class="show-location">Los Angeles, CA</div>
+                <span class="show-status status-available">Tickets Available</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets">
+                  <i class="bi bi-ticket-perforated me-2"></i>Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Saturday, December 20, 2024</div>
+                <div class="show-venue">United Center</div>
+                <div class="show-location">Chicago, IL</div>
+                <span class="show-status status-soldout">Sold Out</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets" disabled>
+                  <i class="bi bi-x-circle me-2"></i>Sold Out
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Tuesday, January 6, 2025</div>
+                <div class="show-venue">TD Garden</div>
+                <div class="show-location">Boston, MA</div>
+                <span class="show-status status-available">Tickets Available</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets">
+                  <i class="bi bi-ticket-perforated me-2"></i>Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Friday, January 9, 2025</div>
+                <div class="show-venue">American Airlines Arena</div>
+                <div class="show-location">Miami, FL</div>
+                <span class="show-status status-available">Tickets Available</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets">
+                  <i class="bi bi-ticket-perforated me-2"></i>Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Sunday, January 11, 2025</div>
+                <div class="show-venue">Toyota Center</div>
+                <div class="show-location">Houston, TX</div>
+                <span class="show-status status-fewleft">Few Tickets Left</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets">
+                  <i class="bi bi-ticket-perforated me-2"></i>Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Wednesday, January 14, 2025</div>
+                <div class="show-venue">Chase Center</div>
+                <div class="show-location">San Francisco, CA</div>
+                <span class="show-status status-available">Tickets Available</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets">
+                  <i class="bi bi-ticket-perforated me-2"></i>Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="show-card">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="show-date">Saturday, January 17, 2025</div>
+                <div class="show-venue">Climate Pledge Arena</div>
+                <div class="show-location">Seattle, WA</div>
+                <span class="show-status status-available">Tickets Available</span>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-tickets">
+                  <i class="bi bi-ticket-perforated me-2"></i>Buy Tickets
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tour Newsletter Section -->
+  <section class="tour-info">
+    <div class="container">
+      <h3>Never Miss a Show</h3>
+      <p>Sign up for tour updates and exclusive pre-sale access</p>
+      <form class="newsletter-form">
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h5 class="mb-3">Get in Touch</h5>
+          <p class="mb-0">
+            <strong>The Bees Knees Management</strong><br>
+            503 Broadway Penthouse<br>
+            New York, NY 10012, USA<br>
+            info@thebeesknees.com
+          </p>
+        </div>
+        
+        <div>
+          <h5 class="mb-3">Follow Us</h5>
+          <ul class="social-links">
+            <li>
+              <a href="#" aria-label="Instagram">
+                <img src="../assets/Icons/SVG/Icon-instagram.svg" alt="Instagram" />
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Facebook">
+                <img src="../assets/Icons/SVG/Icon-facebook.svg" alt="Facebook" />
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Twitter">
+                <img src="../assets/Icons/SVG/Icon-twitter.svg" alt="Twitter" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+      
+      <div class="text-center">
+        <p class="mb-0">© 2024 BandSite. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+    // Add dynamic behavior to ticket buttons
+    document.querySelectorAll('.btn-tickets:not(:disabled)').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Simulate ticket purchase
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="bi bi-check-circle me-2"></i>Opening Ticketmaster...';
+        this.classList.add('btn-success');
+        
+        setTimeout(() => {
+          // In real app, this would open ticket vendor
+          window.open('https://www.ticketmaster.com', '_blank');
+          this.innerHTML = originalText;
+          this.classList.remove('btn-success');
+        }, 1000);
+      });
+    });
+    
+    // Newsletter form handler
+    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button');
+      const input = this.querySelector('input');
+      
+      btn.textContent = 'Subscribed!';
+      btn.style.background = '#28a745';
+      input.value = '';
+      
+      setTimeout(() => {
+        btn.textContent = 'Subscribe';
+        btn.style.background = '#323232';
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
