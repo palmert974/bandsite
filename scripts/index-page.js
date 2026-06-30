@@ -1,6 +1,24 @@
+// Seed comments displayed on page load
+const SEED_COMMENTS = [
+  {
+    name: "Jordan M.",
+    comment: "This was such a great show! The setlist was absolutely fire.",
+    timestamp: 1709596800000,
+  },
+  {
+    name: "Alex T.",
+    comment: "The band killed it last night. Can't wait for the next tour date.",
+    timestamp: 1707091200000,
+  },
+  {
+    name: "Casey R.",
+    comment: "First time seeing them live — absolutely incredible experience.",
+    timestamp: 1704326400000,
+  },
+];
+
 const commentsDiv = document.querySelector(".bio-conversation__comments");
 const defaultPic = "./assets/Images/MercrurySquare.png";
-const date = new Date();
 
 function createCommentElement(commentObj) {
   const commentCard = document.createElement("div");
@@ -21,29 +39,26 @@ function createCommentElement(commentObj) {
   columnDetails.className = "bio-conversation__details";
   commentRow.appendChild(columnDetails);
 
-  const columnNamedate = document.createElement("div");
-  columnNamedate.className = "bio-conversation__label";
+  const columnNameDate = document.createElement("div");
+  columnNameDate.className = "bio-conversation__label";
 
   const commentName = document.createElement("label");
-  commentName.innerText = commentObj["name"];
+  commentName.innerText = commentObj.name;
   commentName.className = "bio-conversation__label";
-  columnNamedate.appendChild(commentName);
+  columnNameDate.appendChild(commentName);
 
   const commentDate = document.createElement("p");
   commentDate.className = "bio-conversation__date";
+  commentDate.innerText = new Date(commentObj.timestamp).toLocaleDateString();
+  columnNameDate.appendChild(commentDate);
 
-  console.log(commentObj);
-  const d = new Date(commentObj.timestamp);
-
-  commentDate.innerText = d.toLocaleDateString();
-  columnNamedate.appendChild(commentDate);
-  columnDetails.append(columnNamedate);
+  columnDetails.appendChild(columnNameDate);
 
   const commentText = document.createElement("p");
-  commentText.innerText = commentObj["comment"];
+  commentText.innerText = commentObj.comment;
   columnDetails.appendChild(commentText);
-  commentCard.appendChild(commentRow);
 
+  commentCard.appendChild(commentRow);
   return commentCard;
 }
 
@@ -53,77 +68,45 @@ function clearComments() {
   }
 }
 
-const commentUrl =
-  "https://project-1-api.herokuapp.com/comments?api_key=d510c716-cbf6-4fd7-b185-17b9bc7cb63a";
-
-console.log(commentUrl);
-function displayComment() {
-  const commentsSection = document.querySelector("#comments");
-
+function displayComments(comments) {
   clearComments();
 
-  axios.get(commentUrl).then((response) => {
-    const data = response.data;
-
-    console.log(data);
-
-    data.sort((a, b) => b.timestamp - a.timestamp);
-
-    console.log(data);
-
-    data.forEach((c) => {
-      console.log(c);
-
-      const commentElement = createCommentElement(c);
-      commentsDiv.appendChild(commentElement);
-    });
-
-    console.log(data);
+  const sorted = [...comments].sort((a, b) => b.timestamp - a.timestamp);
+  sorted.forEach((comment) => {
+    commentsDiv.appendChild(createCommentElement(comment));
   });
 }
+
+// Track all comments in memory (seed + new submissions)
+let allComments = [...SEED_COMMENTS];
 
 function handleFormSubmit(e) {
   e.preventDefault();
 
   const commentInput = document.querySelector(".bio-conversation__input");
+  const commentTextArea = document.querySelector(".bio-conversation__text-area");
 
-  const commentText = document.querySelector(".bio-conversation__text-area");
-
-  if (e.target.name.value == "") {
+  if (!e.target.name.value) {
     commentInput.classList.add("bio-conversation__input-error");
+    return;
   }
 
-  if (e.target.comment.value == "") {
-    commentText.classList.add("bio-conversation__text-area-error");
-
+  if (!e.target.comment.value) {
+    commentTextArea.classList.add("bio-conversation__text-area-error");
     return;
   }
 
   commentInput.classList.remove("bio-conversation__input-error");
-  commentText.classList.remove("bio-conversation__text-area-error");
+  commentTextArea.classList.remove("bio-conversation__text-area-error");
 
-  const day = date.toLocaleDateString();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-
-  const currrentDate = "${month}/${day}/${year}";
-
-  const commentData = {
+  const newComment = {
     name: e.target.name.value,
     comment: e.target.comment.value,
+    timestamp: Date.now(),
   };
 
-  axios
-    .post(commentUrl, commentData)
-    .then((response) => {
-      console.log(response.data);
-      return response.data;
-    })
-    .then((data) => {
-      console.log(data);
-
-      displayComment();
-    });
+  allComments = [newComment, ...allComments];
+  displayComments(allComments);
 
   e.target.name.value = "";
   e.target.comment.value = "";
@@ -131,4 +114,5 @@ function handleFormSubmit(e) {
 
 const formContainer = document.querySelector(".bio-conversation__form");
 formContainer.addEventListener("submit", handleFormSubmit);
-displayComment();
+
+displayComments(allComments);

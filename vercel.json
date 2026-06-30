@@ -3,6 +3,8 @@
   "name": "bandsite",
   "public": true,
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/", "dest": "/index-bootstrap.html" }
+  ]
 }
-
