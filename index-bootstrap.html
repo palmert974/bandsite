@@ -490,16 +490,26 @@
       const comment = document.getElementById('comment').value;
       const date = new Date().toLocaleDateString('en-US');
       
-      // Create new comment element
+      // Create new comment element (built with textContent, not innerHTML,
+      // so a name/comment containing HTML can't inject markup or scripts)
       const newComment = document.createElement('div');
       newComment.className = 'comment-card';
-      newComment.innerHTML = `
-        <div class="comment-header">
-          <span class="comment-author">${name}</span>
-          <span class="comment-date">${date}</span>
-        </div>
-        <p class="comment-text">${comment}</p>
-      `;
+
+      const header = document.createElement('div');
+      header.className = 'comment-header';
+      const author = document.createElement('span');
+      author.className = 'comment-author';
+      author.textContent = name;
+      const dateEl = document.createElement('span');
+      dateEl.className = 'comment-date';
+      dateEl.textContent = date;
+      header.append(author, dateEl);
+
+      const text = document.createElement('p');
+      text.className = 'comment-text';
+      text.textContent = comment;
+
+      newComment.append(header, text);
       
       // Add to top of comments
       const container = document.getElementById('commentsContainer');
